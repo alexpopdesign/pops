@@ -1,0 +1,11 @@
+{{- $blockClass := $.Scratch.Get "blockClass" -}}
+{{- $blockClass := $.Scratch.Get "blockClass" -}}
+{{- $items := .Scratch.Get "items" -}}
+<div class="row-images {{- with $blockClass }}{{ . }}{{ else }} row row-cols-2 row-cols-lg-4 gx-2 gx-xl-4 justify-content-center{{ end }}">
+{{- with $items }}
+  {{- range . }}
+  {{ partial "item-image.html" . }}
+  {{ end -}}
+{{ end -}}
+</div>{{ printf "<!-- END row-images -->" | safeHTML }}
+{{ template "_internal/pagination.html" . }}

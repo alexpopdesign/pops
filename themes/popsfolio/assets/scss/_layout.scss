@@ -1,0 +1,50 @@
+/**
+ *  Theme
+ *  ========================================
+*/
+
+body {
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  // @include media-breakpoint-down(sm) {
+  //   line-height: $line-height-sm;
+  // }//END @media
+}
+.smooth-scroll {
+  scroll-behavior: smooth;
+}
+
+.overflow-x-hidden {
+  overflow-x: hidden;
+}
+
+.removed {
+  position: fixed;
+  top: -200%;
+}
+
+.zindex-min {
+  z-index: $zindex-min;
+}
+
+.zindex-md {
+  z-index: $zindex-md;
+}
+
+.zindex-max {
+  z-index: $zindex-max;
+}
+
+
+// Colors in display
+// .display-1,
+// .display-2,
+// .display-3,
+// .display-4,
+// .display-5,
+// .display-6 {
+//   strong {
+//     font-weight: inherit;
+//     color: $secondary;
+//   }
+// }

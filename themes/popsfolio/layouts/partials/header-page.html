@@ -1,0 +1,32 @@
+{{- if or .Title .Description }}
+{{- $headerClass := "pb-md-5" -}}
+{{- if eq .Type "typoinlife" }}
+  {{- $headerClass = "pb-md-4 bg-primary inverse" -}}
+{{ end -}}
+<div class="header-page container-fluid {{ $headerClass -}}">
+  <div class="row align-items-md-end">
+    {{- if or .Title .Params.subtitle -}}
+    <div class="header-titlegroup col-12 pb-3">
+      {{- if not .IsHome | and .Title }}
+      <a class="link text-uppercase" href="{{- .Parent.RelPermalink -}}">
+        {{- with .Parent.Params.shortTitle }}{{ . }}{{ else }}{{ .Parent.Title }}{{ end -}}
+      </a>
+      <h1 class="header-page-headline mt-3 mb-2 {{ if .IsNode }}{{ "display-1" }}{{ else }}{{ "display-2" }}{{ end }}">
+        {{ .Title | markdownify }}
+      </h1>
+      {{ end -}}
+      {{- with .Params.subtitle }}
+      <h2 class="fs-4 mt-3 mb-1">{{ . }}</h2>
+      {{ end -}}
+    </div>
+    {{ end -}}
+    {{- with .Description }}
+    <div class="header-summary col-lg-9 pb-3 d-flex align-items-center">
+      <div class="lead mb-2 mt-md-2">
+        {{ . }}
+      </div>
+    </div>
+    {{ end -}}
+  </div>  
+</div>{{ printf "<!-- END header-page -->" | safeHTML }}
+{{ end -}}

@@ -1,0 +1,12 @@
+{{ define "main" }}
+<main class="default-single">
+  {{ partial "header-page.html" . }}
+  {{- with .Content }}
+  <article class="container-xxl pb-5 pb-lg-8">
+    <div class="max-w-lg-50 mx-auto txt fs-5">
+      {{ . }}
+    </div>
+  </article>
+  {{ end -}}
+</main>
+{{ end }}

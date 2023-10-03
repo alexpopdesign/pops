@@ -1,0 +1,113 @@
+theme: popsfolio
+title: POPSKRAFT
+baseURL: 'https://popskraft.com'
+languageCode: en-us
+paginate: '36'
+googleAnalytics: UA-112488325-1
+summaryLength: '30'
+markup:
+  tableOfContents:
+    startLevel: 2
+    endLevel: 3
+    ordered: false
+sitemap:
+  changefreq: monthly
+  priority: 0.5
+  filename: sitemap.xml
+imaging:
+  resampleFilter: CatmullRom
+  quality: 95
+taxonomies:
+  tag: tags
+
+build:
+  writeStats: true
+
+# Site Data =========
+params:
+  subtitle: "Design & typography"
+  seoTitleAfter: by Popskraft
+  favicon: images/favicon.png
+  appleIcon: images/apple-touch-icon.png
+  OGImage: images/OG/OG_image.png
+  OGType: website
+
+  description: >-
+    Popskraft helps modern product teams collaborate on design by capturing
+    process and decision-making. We created a visual language that uses the
+    abstract building blocks of design to represent the essential qualities of
+    great creative teams
+
+  displaySiteTitle: true
+
+  logo:
+    img: images/logo-single-rounded.svg
+    imgWhite: images/logo-single-inverse-rounded.svg
+    height: 40
+    width: 40
+  logo_te:
+    img: images/logo-te-text.svg
+    height: 40
+    width: 40
+
+  socialsEnabled: true
+
+  socialItems:
+    - title: Facebook
+      icon: facebook
+      link: ''
+    - title: Instagram
+      icon: instagram
+      link: 'https://www.instagram.com/pops_kraft/'
+  socialItemsTe:
+    - title: Instagram
+      icon: instagram
+      link: 'https://www.instagram.com/'
+
+  style:
+    font_link_href: 'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap'
+
+  legal: >-
+    By using this site, by sending messages, you agree to the processing of
+    personal data in accordance with the privacy policy
+
+  text:
+    contactMe: Contact me
+
+  # CARRD =========
+  carrd:
+    isOn: true
+    text: You can start with Carrd builder for free. But if you purchase a PRO account (just $19 for one Year) you can use this professional template also for free!
+    link: https://try.carrd.co/vwrlxzb1
+    linkCaption: Check out the Carrd builder
+    linkOrder: websites-onepage/#tariffs
+    linkOrderCaption: Order the same site
+    carrdTemplateLinkCaption: Get PRO template free
+
+  # FORMS =========
+  formContactLink: https://share.hsforms.com/1_4HY0_O6RlyDZjvY3vzUyQ4hte5 
+  formContact: 
+
+# NAvigation =========
+menu:
+  main:
+    - name: Onepage sites
+      URL: "#portfolio-1"
+      weight: 1
+    - name: Websites
+      URL: "#portfolio-2"
+      weight: 2
+    - name: Fonts
+      URL: "#fonts"
+      weight: 4
+    - name: Identity
+      URL: "#branding"
+      weight: 4
+    - name: About
+      URL: "about"
+      weight: 9
+      
+  # footer:
+  #   - name: Typo Inlife
+  #     URL: /typoinlife/
+  #     weight: 1

@@ -1,0 +1,29 @@
+{{- $items := .Scratch.Get "items" -}}
+<div class="row-cards row g-0 pb-4 pb-md-6 justify-content-center">
+{{- with $items }}
+  {{- range . }}
+  <div class="row-cards-item col-6 col-lg-3">
+    <h2 class="display-5"><a class="link" href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    <div class="lead">
+      {{- if .Page.Params.description }}
+        {{ .Page.Params.description }}
+      {{ else }}
+        {{ .Summary }}
+      {{ end -}}
+    </div>
+    <a class="d-block text-center position-relative overflow-hidden" href="{{ .RelPermalink }}">
+     {{- if $itemImg := .Resources.ByType "image" }}
+      {{- $itemImg := (.Resources.GetMatch (print (index $itemImg 0))).Fill "473x300 Center q90" -}}
+      {{- $itemImg := $itemImg.Filter (images.UnsharpMask 0.8 1 0) -}}
+      <img class="lazyload img-fluid"
+        src="{{ $itemImg.RelPermalink }}"
+        width="{{ $itemImg.Width }}"
+        height="{{ $itemImg.Height }}"
+        alt="{{ .Title }} {{ $itemImg }}">
+      {{ end -}}
+    </a>
+  </div>
+  {{ end -}}
+{{ end -}}
+</div>{{- printf "<!-- END row-cards -->" | safeHTML -}}
+{{ template "_internal/pagination.html" . }}

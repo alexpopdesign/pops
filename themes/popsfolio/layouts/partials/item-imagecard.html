@@ -1,0 +1,18 @@
+{{- if $itemImg := (index (.Resources.ByType "image") 0) }}
+{{- $itemImg := $itemImg.Resize "197x webp picture" -}}
+<div class="item-imagecard col-6 col-md-4 col-xl-3 mb-1">
+  <a class="row h-100 gx-0 align-items-end border-end" href="{{ .RelPermalink }}">
+    <div class="col-12 col-sm-4 col-md-5">
+      <img class="lazyload img-fluid"
+        data-aos="zoom-in-up"
+        src="{{ $itemImg.RelPermalink }}"
+        width="{{ $itemImg.Width }}"
+        height="{{ $itemImg.Height }}"
+        alt="{{ .Title }} {{ $itemImg }}">
+    </div>
+    <div class="col">
+      <h3 class="display-5 font-xs-xsm text-uppercase m-2 me-md-4"><span class="link">{{ .Title }}</span></h3>
+    </div>
+  </a>
+</div>
+{{ end -}}

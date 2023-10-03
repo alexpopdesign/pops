@@ -1,0 +1,76 @@
+.btn {
+  box-shadow: .375rem .375rem 0 rgba(62,68,84,0.188);
+
+  &:hover {
+    background-color: $gray-800;
+    color: #ffffff;
+    border-color: $gray-800;
+  }
+}
+
+// Hover decoration
+@each $color,
+$value in $theme-colors {
+
+  .btn-#{$color},
+  .btn-outline-#{$color} {
+
+    // Add dropdown shadow on hover
+    &:hover {
+      box-shadow: .75rem .75rem .25rem rgba($value, .1);
+    }
+  }
+}
+
+// .btn-outline-primary,
+// .btn-outline-secondary {
+//   border-color: var(--bs-gray-light);
+// }
+
+.btn-link {
+  position: relative;
+  padding-left: 0;
+  padding-right: 0;
+  box-shadow: none;
+  font-weight: bold;
+  color: $gray-800;
+
+  &:after {
+    @include trans();
+    @include underline-after($secondary, 0);
+    transform: scale(1,1);
+    transform-origin: bottom left;
+
+    .inverse & {
+      @include underline-after(#fff);
+    }
+  }
+
+  &:hover {
+    background: transparent;
+    border-color: transparent;
+    color: $gray-base;
+    &:after {
+      transform: scale(0,1);
+    }
+  }
+
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.btn-link-arrow {
+  padding-right: 20px;
+  &:before {
+    content: "\e315";
+    position: absolute;
+    font-weight: normal;
+    right: -8px;
+    line-height: .8;
+    font-family: 'themeicon';
+    text-align: center;
+    color: var(--bs-primary);
+    font-size: 24px;
+  }
+}

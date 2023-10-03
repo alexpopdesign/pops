@@ -1,0 +1,9 @@
+{{- $socials := .Site.Params.socialItems -}}
+{{- if eq $.Type "typoinlife" }}
+  {{ $socials = .Site.Params.socialItemsTe }}
+{{ end -}}
+{{- range $socials }}
+  {{- if .link -}}
+  <a title="{{- .title -}}" href="{{- .link -}}" target="_blank" rel="noopener"><span class="icon-round themeicon text-primary themeicon-{{ .icon }}"></span></a>
+  {{- end -}}
+{{ end -}}

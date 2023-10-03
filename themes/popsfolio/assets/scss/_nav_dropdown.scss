@@ -1,0 +1,114 @@
+.dropdown {
+  .dropdown-menu {
+    box-shadow: $box-shadow;
+  }
+
+  .dropdown-hover {
+    transition: all 0.5s;
+    overflow: hidden;
+    transform-origin: top center;
+    transform: scale(0);
+    display: block;
+  }
+
+  &:hover {
+    .dropdown-hover {
+      transform: scale(1);
+    }
+  }
+}
+
+// .dropdown-toggle::after {
+//   margin-left: 9px;
+//   vertical-align: middle;
+//   content: "";
+//   border-top: 7px solid;
+//   border-right: 5px solid transparent;
+//   border-bottom: 0;
+//   border-left: 5px solid transparent;
+//   color: var(--bs-bg-gray);
+// }
+
+// @include media-breakpoint-down(lg) {
+//   .nav-main {
+//     .nav-link {
+//       width: 100%;
+//       &:not(:last-child) {
+//         border-bottom: $border-base;
+//         border-color: #ffffff;
+//       }
+//     }
+//   }
+
+//   .dropdown-menu {
+//     background-color: transparent;
+//     border-color: transparent;
+//   }
+
+//   .navbar-collapse {
+//     .navbar-mask {
+//       @include trans-fast();
+//       position: absolute;
+//       content: "";
+//       left: 0;
+//       top: 0;
+//       right: 0;
+//       bottom: 0;
+//       transform: scale(0);
+//     }
+
+//     &.show {
+//       .navbar-mask {
+//         transform: scale(1);
+//       }
+//     }
+
+//     .navbar-nav {
+//       @include trans();
+//       transform: scale(0);
+//       position: relative;
+//     }
+
+//     &.show .navbar-nav {
+//       transform: scale(1);
+//     }
+
+//     .nav-link {
+//       text-transform: uppercase;
+//       border-bottom: $border-base;
+//       color: var(--bs-white) !important;
+//     }
+//     .dropdown-item {
+//       color: var(--bs-white) !important;
+//     }
+//   }
+// }//END @media
+
+@include media-breakpoint-up(lg) {
+  // https://bootstrap-menu.com/detail-hover-animation.html
+  .dropdown-menu-end {
+    right:0;
+    left: auto; 
+  }
+  
+  .dropdown-menu {
+    .nav-item & {
+      @include trans();
+      display:block;
+      opacity: 0;
+      visibility: hidden;
+      margin-top:0;
+    }
+    .nav-item:hover & {
+      opacity:1;
+      visibility:visible;
+      top:100%;
+      transform: scale(1);
+    }
+    &.fade-down {
+      top:80%;
+      transform: scale(0);
+      transform-origin: 0% 0%;
+    }
+  }
+}

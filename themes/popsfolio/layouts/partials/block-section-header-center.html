@@ -1,0 +1,24 @@
+{{/*  
+  .caption
+  .titleColor
+  .title
+  .description
+  .blockClass
+*/}}
+<div class="block-section-header container-xxl py-4 py-lg-7 text-center {{ .blockClass }}">
+  {{- if or .title .caption -}}
+  <div class="header-titlegroup max-w-lg-80 mx-auto">
+    {{- with .caption }}
+    <div class="caption fs-5 fw-bolder py-3 py-lg-4">{{ . }}</div>
+    {{ end -}}
+    <h2 class="display-2 mb-3">
+      {{- .title -}}{{- with .titleColor }}<span class="text-primary"> {{ . }}</span>{{ end -}}
+    </h2>
+  </div>
+  {{ end -}}
+  {{- with .description }}
+  <div class="fs-4 pt-1 pt-lg-3 text-dark  max-w-lg-80 mx-auto">
+    {{ . | markdownify }}
+  </div>
+  {{ end -}}
+</div>{{ printf "<!-- END block-section-header-center -->" | safeHTML }}

@@ -1,0 +1,14 @@
+{{- $s := .Site.Params.style }}
+{{ with $s.font_family }}body { font-family:{{.}};{{ end -}} }
+{{ with $s.font_size }}@media (min-width: 992px) { body { font-size:{{.}}; }}{{ end -}}
+{{ with $s.headings_font_family }}h1,h2,h3,h4,h5,h6 { font-family:{{.}}; }{{ end -}}
+{{ with $s.display_font_family }}.display-1,.display-2,.display-3,.display-4 { 
+  font-family:{{.}};
+}
+{{ end -}}
+@media (min-width: 992px) {
+  {{- with $s.d1_size }}.display-1 { font-size:{{.}}; }{{ end -}}
+  {{- with $s.d2_size }}.display-2 { font-size:{{.}}; }{{ end -}}
+  {{- with $s.d3_size }}.display-3 { font-size:{{.}}; }{{ end -}}
+  {{- with $s.d4_size }}.display-4 { font-size:{{.}}; }{{ end -}}
+}

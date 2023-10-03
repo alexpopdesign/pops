@@ -1,0 +1,28 @@
+{{/* 
+  .image
+  .title
+  .subtitle
+  .description
+*/}}
+<div class="block-person container-xxl">
+  <div class="row gx-3 gx-lg-5 align-items-lg-end pt-5 pt-lg-6">
+    {{- with .image }}
+    {{- $itemImg := (resources.Get . ).Crop "320x320 webp picture Center" -}}
+    <div class="col-3 col-lg-3 col-xxl-5 text-lg-end">
+      <img class="img-fluid rounded max-w-sm-30 max-w-lg-100"
+        src="{{ $itemImg.RelPermalink }}"
+        width="160"
+        height="160"
+        alt="title">
+    </div>
+    {{ end -}}
+    <div class="col-9 col-lg col-xxl">
+      <div class="pt-3 pt-lg-5 pt-xl-6 ps-lg-5">
+        <h3 class="display-5 text-dark">{{ .title }} {{ .subtitle }}</h3>
+        <div class="fs-4">
+          {{ .description | markdownify }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

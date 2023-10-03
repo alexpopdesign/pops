@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Bootstrap theme-bs</title>
+	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<link rel="stylesheet" type="text/css" href="../../../static/css/bootstrap.css" media="all">
+	<link rel="stylesheet" type="text/css" href="../../../static/css/theme.css" media="all">
+
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&amp;subset=cyrillic" rel="stylesheet">	
+
+	<style type="text/css">
+		.demo-block {
+			display: inline-block;
+			margin: 5px;
+			height: 100px;
+			width: 100px;
+			font-size: 9px;
+		}
+		.demobox {
+			/*outline: 1px dashed rgba(14,55,200,.08);*/
+			overflow: hidden;
+			margin: 0;
+			background-color: rgba(14,55,200,.06);
+		}
+		.demoouter {
+			outline: 1px dashed rgba(14,55,200, .3);
+			overflow: hidden;
+		}
+	
+		#animations .btn {
+			white-space: normal;
+		}
+		button.atrig {
+			text-transform: none;
+		}
+		*[class^='anim-target'] {
+			cursor: pointer;
+			position: relative;
+			padding: 10px;
+			margin: 10px 0;
+			max-width: 700px;
+			min-height: 30px;
+			background-color: #aaa;
+			color: #fff;
+		}
+		.flipbox {
+			position: relative;
+		}
+		.flipbox-qube {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+		}
+		.flipbox-qube.face {
+			-webkit-transform-origin: bottom right;
+			transform-origin: bottom right;
+			-webkit-transform: scaleX(1);
+			transform: scaleX(1);
+		}
+		.flipbox-qube.face.anim-in {
+			-webkit-transform: scaleX(0);
+			transform: scaleX(0);
+		}
+		.flipbox-qube.back {
+			-webkit-transform-origin: top left;
+			transform-origin: top left;
+			-webkit-transform: scaleX(0);
+			transform: scaleX(0);
+		}
+		.flipbox-qube.back.anim-in {
+			-webkit-transform: scaleX(1);
+			transform: scaleX(1);
+		}
+		.scrollspy-example {
+			position: relative;
+			height: 200px;
+			margin-top: 10px;
+			overflow: auto;
+		}
+		.animationBox {
+			overflow: hidden;
+		}
+		.flipbox {
+			margin: 10px 0;
+			width: 200px;
+			height: 200px;
+		}
+		.flipbox-qube {
+			text-align: center;
+			color: #fff;
+			cursor: pointer;
+			padding: 20px;
+		}
+		.flipbox-qube.face {
+			background-color: #333;
+		}
+		.flipbox-qube.back {
+			background-color: #f60;
+		}
+	</style>
+
+<body class="home" data-spy="scroll" data-target="#toc">
+<div class="container py-6">
+
+	<div id="questions" class="row">
+		<div class="col-4">
+			<input
+				v-model="message"
+				class="form-control" type="text" placeholder="Что ищем?">
+		</div>
+		<div v-if="message" class="col">
+			<input
+				v-model="subject"
+				class="form-control" type="text" placeholder="В какой сфере?">
+		</div>
+		<div v-if="message, subject" class="col">
+			<input
+				v-model="onsite"
+				class="form-control" type="text" placeholder="Поиск на сайте...">
+		</div>
+		<div class="col-12 py-3">
+			<h2 class="display-4 my-3">Google:</h2>
+
+			<div class="py-1"><a class="py-2" :href="'https://www.google.com/search?q=' + message + subject" target="_blank">{{ message }} {{ subject }}</a></div>
+
+		</div>
+
+	</div>
+
+  	<hr>
+
+  	<div id="test">
+	  <div>
+	    <!--
+	      Now we provide each todo-item with the todo object
+	      it's representing, so that its content can be dynamic.
+	      We also need to provide each component with a "key",
+	      which will be explained later.
+	    -->
+		<todo-item
+			v-for="item in groceryList"
+			v-bind:todo="item"
+			v-bind:key="item.id"
+		></todo-item>
+	  </div>
+	</div>
+
+	<hr>
+
+	<div id="app">
+		{{ message }}
+	</div>
+
+</div>
+
+
+
+
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="../_vue.js"></script>
+
+	<script src="../../../static/js/bootstrap-min.js"></script>
+	<script src="../../../static/js/theme-min.js"></script>
+
+
+</body>
+</html>

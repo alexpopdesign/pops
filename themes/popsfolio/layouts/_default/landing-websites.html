@@ -1,0 +1,52 @@
+{{ define "main" }}
+
+{{ with .Params.cover }}
+{{ partial "block-cover.html" . }}
+{{ end }}
+
+{{ with .Params.sectionPortfolio }}
+<div class="bg-lighter">
+  {{ partial "block-section-header.html" . }}
+  <img class="img-full flip-h" src="{{ (resources.Get "images/divider-white.svg").Permalink }}" alt="Portfolio">
+</div>
+{{ end }}
+
+{{ with .Params.imagesText }}
+{{ partial "block-image-text.html" . }}
+{{ end }}
+
+<div id="porfolioCategory" class="mb-3 mb-lg-7"></div>
+{{- .Scratch.Set "typeSource" .Params.portfolioPages -}}
+{{- .Scratch.Set "limit" 8 -}}
+{{ partial "block-listing-images.html" . }}
+
+<div id="tariffs"></div>
+{{ with .Params.sectionTariffs }}
+{{ partial "block-section-header.html" . }}
+{{ end }}
+{{ with .Params.tariffs }}
+{{ partial "block-pricetable.html" . }}
+{{ end }}
+
+{{ with .Params.features }}
+<div id="features"></div>
+{{ partial "block-features.html" . }}
+{{ end }}
+
+{{ with .Params.sectionProcess }}
+<div id="process"></div>
+{{ partial "block-section-header.html" . }}
+{{ end }}
+{{ with .Params.processListing }}
+{{ partial "block-process.html" . }}
+{{ end }}
+
+{{ with .Params.sectionFaq }}
+<div id="faq"></div>
+{{ partial "block-section-header-center.html" . }}
+{{ end }}
+{{ with .Params.faq }}
+{{ partial "block-faq.html" . }}
+{{ end }}
+
+{{ end }}

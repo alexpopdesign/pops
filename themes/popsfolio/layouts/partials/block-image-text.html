@@ -1,0 +1,32 @@
+{{- range . }}
+{{ $order := .order }}
+<div class="block-image-text row g-0 border-bottom border-light">
+
+  {{ with .img }}
+  <div class="cover col-lg-7 py-2 py-lg-0 {{ if eq $order false }}{{" order-lg-2"}}{{ end }}">
+    {{ $image := (resources.Get . ).Resize "1111x webp picture Center" }}
+    <img class="image img-full" data-aos="fade-up" src="{{ $image.Permalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="Portfolio">
+  </div>
+  {{ end }}
+
+  <div class="col">
+    <div class="px-3 py-4 p-lg-6 py-xl-8 sticky-top">
+      <h2 class="display-3 mb-2">{{.title}}</h2>
+      <div class="py-1 py-lg-3 fs-5">
+        {{.description}}
+      </div>
+      <div class="link-group my-2">
+        <a class="btn btn-lg btn-link text-primary" href="{{.link}}">{{.linkCaption}}<svg
+            xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="ms-2 bi bi-arrow-right"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z">
+            </path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div>
+{{ end }}

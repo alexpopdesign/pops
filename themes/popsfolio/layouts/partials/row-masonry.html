@@ -1,0 +1,11 @@
+{{- $blockClass := $.Scratch.Get "blockClass" -}}
+{{- $items := .Scratch.Get "items" -}}
+<div class="row-masonry {{ with $blockClass }}{{ . }}{{ else }}row g-0 pb-4 pb-md-6 justify-content-center{{ end }}"
+  data-masonry="{&quot;percentPosition&quot;: true }">
+{{- with $items }}
+  {{- range . }}
+  {{ partial "item-masonry.html" . }}
+  {{ end -}}
+{{ end -}}
+</div>{{ printf "<!-- END row-masonry -->" | safeHTML }}
+{{ template "_internal/pagination.html" . }}

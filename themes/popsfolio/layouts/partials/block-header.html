@@ -1,0 +1,26 @@
+{{- $blockClass := .Scratch.Get "blockClass" -}}
+{{- $title := .Scratch.Get "title" -}}
+{{- $titleColor := .Scratch.Get "titleColor" -}}
+{{- $subtitle := .Scratch.Get "subtitle" -}}
+{{- $description := .Scratch.Get "description" -}}
+<div class="block-header container-fluid pb-4 py-lg-7 {{ $blockClass }}">
+  <div class="row align-items-end">
+    {{- if or $title $subtitle -}}
+    <div class="header-titlegroup col">
+      <h1 class="block-header-headline mb-4 {{ if .IsNode }}{{ "display-1" }}{{ else }}{{ "display-4" }}{{ end }}">
+        {{- with $titleColor }}<span class="text-primary">{{- $titleColor -}} </span>{{ end -}} {{- $title -}}
+      </h1>
+      {{- with $subtitle }}
+      <h2 class="font-xl font-weight-normal">{{ . }}</h2>
+      {{ end -}}
+    </div>
+    {{ end -}}
+    {{- with $description }}
+    <div class="header-summary col-lg-6 d-flex align-items-center">
+      <div class="lead py-1 py-lg-3">
+        {{ markdownify . }}
+      </div>
+    </div>
+    {{ end -}}
+  </div>  
+</div>{{ printf "<!-- END block-header -->" | safeHTML }}

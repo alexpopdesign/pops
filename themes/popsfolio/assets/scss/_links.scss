@@ -1,0 +1,49 @@
+// @ theme-mixins.scss
+.link {
+  position: relative;
+  cursor: pointer;
+
+  &:after {
+    @include trans();
+    @include underline-after();
+    transform: scale(0,1);
+    transform-origin: bottom left;
+    opacity: 0;
+
+    .inverse & {
+      @include underline-after($link-color);
+    }
+  }
+
+  &:hover {
+    &:after {
+      transform: scale(1,1);
+      opacity: .8;
+    }
+  }
+}
+
+.underline {
+  position: relative;
+  // display: inline-block;
+  cursor: pointer;
+
+  &:after {
+    @include trans();
+    @include underline-after();
+    transform: scale(1,1);
+    transform-origin: bottom right;
+    opacity: 1;
+
+    // .inverse & {
+    //   @include underline-after($link-color);
+    // }
+  }
+
+  &:hover {
+    &:after {
+      transform: scale(.2,1);
+      opacity: .8;
+    }
+  }
+}

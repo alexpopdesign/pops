@@ -1,0 +1,50 @@
+// Animation
+@mixin trans-fast() {
+  transition: .125s ease-out !important;
+}
+@mixin trans() {
+  transition: .4s ease-out !important;
+}
+@mixin trans-slow() {
+  transition: 1s ease-out !important;
+}
+@mixin trans-delay-fast() {
+  transition: .125s .5s ease-out !important;
+}
+@mixin trans-delay() {
+  transition: .4s .5s ease-out !important;
+}
+@mixin trans-delay-slow() {
+  transition: 1s .5s ease-out !important;
+}
+
+// Link underline decor
+@mixin underline-after($underline-bg: $link-underline-color, $bottom: -4px, $underline-h: 2px) {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: $underline-h;
+  bottom: $bottom;
+  background-color: $underline-bg;
+}
+
+@mixin make-container($gutter: $container-padding-x) {
+  --#{$prefix}gutter-x: #{$gutter};
+  --#{$prefix}gutter-y: 0;
+  width: 100%;
+  padding-right: calc(var(--#{$prefix}gutter-x) * .5); // stylelint-disable-line function-disallowed-list
+  padding-left: calc(var(--#{$prefix}gutter-x) * .5); // stylelint-disable-line function-disallowed-list
+  margin-right: auto;
+  margin-left: auto;
+  
+    @include media-breakpoint-up(xl) {
+      padding-right: calc(var(--#{$prefix}gutter-x) * 1.5);
+      padding-left: calc(var(--#{$prefix}gutter-x) * 1.5);
+    }
+
+    // @include media-breakpoint-up(xxl) {
+    //   padding-right: calc(var(--#{$prefix}gutter-x) * 2.125);
+    //   padding-left: calc(var(--#{$prefix}gutter-x) * 2.125);
+    // }
+}

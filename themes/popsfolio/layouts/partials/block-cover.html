@@ -1,0 +1,44 @@
+{{/*
+  .cover
+    .title
+    .subtitle
+    .description
+    .background_color_HEX
+    .btnLink .btnCaption
+    .coverImg
+*/}}
+<div class="block-cover position-relative {{ with .class -}}{{ . }}{{- end }}" {{- with .background_color_HEX }} style="background-color:{{ . | safeCSS }};"{{ end -}}>
+  <div class="row g-0 align-items-end">
+    <div class="col-lg d-flex align-items-center">
+      <div class="content px-3 py-5 ps-xl-6 py-xl-8" data-aos="fade-in" data-aos-delay="200">
+        <h1 class="display-2 mb-3 mb-lg-5 text-uppercase">
+          {{ .title | markdownify }}
+          {{ with .subtitle }}<br>{{ . | markdownify}}{{ end }}
+        </h1>
+        <div class="fs-4" data-aos="fade-in" data-aos-delay="400">
+          {{ .description | markdownify }}
+        </div>
+        {{ if and .btnLink .btnCaption }}
+        <div class="link-group my-2">
+          {{ partial "button.html" . }}
+        </div>
+        {{ end }}
+      </div>
+    </div>
+    <div class="col-lg-7">
+      {{ with .coverImg }}
+      {{ $image := (resources.Get . ).Resize "1111x webp picture Center" }}
+      <img class="img-full" data-aos="fade-in"
+        src="{{ $image.Permalink }}"
+        width="{{ $image.Width }}"
+        height="{{ $image.Height }}"
+        alt="Portfolio">
+      {{ end }}
+    </div>
+  </div>
+  {{- $divider := resources.Get "images/divider-white.svg" -}}
+  {{ if .coverDivider }}
+    {{- $divider = resources.Get .coverDivider -}}
+  {{ end }}
+  <img class="cover-divider position-absolute w-100 h-auto bottom-0 start-0 mb-n1" src="{{ $divider.Permalink }}" width="2000" alt="divider">
+</div>

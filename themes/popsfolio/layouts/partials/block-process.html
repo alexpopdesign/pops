@@ -1,0 +1,23 @@
+<div class="block-process container-xxl">
+  {{- range $i, $e := . }}
+  {{- $itemImg := resources.Get .img -}}
+  <div class="row border-bottom border-light py-3 py-lg-2">
+    <div class="col-lg-3 text-lg-end text-center text-md-start">
+      <img class="img-fluid max-w-50 max-w-sm-100"
+        width="170"
+        src="{{ $itemImg.RelPermalink }}"
+        alt="title">
+    </div>
+    <div class="col-lg d-flex align-items-center">
+      <div class="display-4 text-dark my-3">
+        {{.title}}
+      </div>
+    </div>
+    <div class="col-lg-6 d-flex align-items-center">
+      <div class="fs-5 txt">
+        {{.summary | markdownify }}
+      </div>
+    </div>
+  </div>
+  {{ end }}
+</div>

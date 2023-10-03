@@ -1,0 +1,9 @@
+{{ with .Params.tags }}
+<div class="page-tags my-3 text-uppercase font-sm">
+  <span class="text-gray me-2">tags:</span>
+  {{ range . }}
+  {{ $href := print (absURL "tags/") (urlize .) }}
+  <a class="link tag me-2" href="{{ $href }}">{{ . }}</a>
+  {{ end }}
+</div>
+{{ end }}

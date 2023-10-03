@@ -1,0 +1,6 @@
+{{- $gumroad_url := .Params.gumroad_url -}}
+{{ with $gumroad_url -}}
+<div class="border p-3 mb-4">
+  {{ . | safeHTML }}
+</div>
+{{- end }}

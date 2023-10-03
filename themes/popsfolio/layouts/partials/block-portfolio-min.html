@@ -1,0 +1,93 @@
+{{/*
+  .imgCover
+  .coverLink
+  .titleFirst
+  .title
+  .btnLink:
+  .btnCaption:
+  .summary
+  .background_color_HEX
+  .class
+  .gallery
+    .caption:
+    .img
+    .class:
+    .link:
+*/}}
+<div class="block-portfolio">
+  {{- range $i, $e := . }}
+  <div id="portfolio-{{ add $i 1 }}" class="portfolio-item {{ .class -}}" {{- with .background_color_HEX }}
+    style="background-color:{{ . | safeCSS }};" {{ end -}}>
+
+    {{- if and .imgCover (or .title .titleFirst .summary) -}}
+    {{- $itemImg := (resources.Get .imgCover ).Resize "1270x webp picture Center" -}}
+    <div class="block-portfolio-cover row g-0">
+      <div class="content col-xl-4">
+        <div class="px-3 py-4 px-xl-6 py-xxl-8 sticky-top">
+          <h2 class="display-2 mb-3"><span>{{ .titleFirst }} </span>{{ .title }}</h2>
+          <div class="summary">
+            {{ .summary | truncate 500 }}
+          </div>
+        </div>
+      </div>
+      <div class="cover col-xl-8">
+        {{ if .coverLink }}<a href="{{ .coverLink }}">{{ end }}
+        <img class="image-cover img-full rounded"
+          data-aos="fade-in"
+          src="{{ $itemImg.RelPermalink }}"
+          width="{{ $itemImg.Width }}"
+          height="{{ $itemImg.Height }}" 
+          alt="{{ .title }}">
+        {{ if .coverLink }}</a>{{ end }}
+      </div>
+    </div>
+    {{- else if .imgCover -}}
+    {{- $itemImg := (resources.Get .imgCover ).Resize "1746x webp picture Center" -}}
+    <div class="container-xxl mb-1">
+      {{ if .coverLink }}<a href="{{ .coverLink }}">{{ end }}
+        <img class="image-cover img-full rounded" data-aos="fade-in" src="{{ $itemImg.RelPermalink }}"
+          width="{{ $itemImg.Width }}" height="{{ $itemImg.Height }}" alt="{{ .title }}">
+      {{ if .coverLink }}</a>{{ end }}
+    </div>
+    {{ end -}}
+
+    <div class="container-xxl pb-4 pb-lg-6 pb-xxl-7">
+      {{- with .gallery }}
+      {{- $galleryLen := len . -}}
+      <div class="block-portfolio-gallery row g-1">
+        {{- range . }}
+        {{- if $itemImg := .img -}}
+        {{- $itemImg := (resources.Get $itemImg).Fill "872x640 webp picture Center" -}}
+        {{/* $itemImg := $itemImg.Filter (images.UnsharpMask 0.7 1 0) */}}
+        <div class="block-portfolio-item col-12 col-md{{- if gt ($galleryLen) 3 -}}-6{{ end -}}">
+          {{ with .link }}<a href="{{ . }}">{{ end }}
+            <div class="d-block position-relative">
+              <img class="position-relative rounded img-full {{ .class -}}"
+                data-aos="zoom-in"
+                src="{{ $itemImg.RelPermalink }}"
+                width="{{ $itemImg.Width }}"
+                height="{{ $itemImg.Height }}"
+                alt="Portfolio {{ .title }}">
+              {{ if .caption }}
+              <div class="position-absolute bottom-0 start-0 w-100 text-truncate" data-aos="fade-left" data-aos-delay="400">
+                <span class="link d-inline-block fade-bg-dark px-3 py-1 fs-xsm rounded-1 text-white">{{ .caption }}</span>
+              </div>
+              {{ end }}
+            </div>
+          {{ with .link }}</a>{{ end }}
+        </div>
+        {{ end -}}
+        {{ end -}}
+      </div>
+      {{ end -}}
+      
+      {{ if and .btnLink .btnCaption }}
+      <div class="link-group text-end pt-3">
+        {{ partial "button.html" . }}
+      </div>
+      {{ end -}}
+
+    </div>
+  </div>
+  {{ end -}}
+</div>{{- printf "<!-- END block-portfolio -->" | safeHTML }}

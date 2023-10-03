@@ -1,0 +1,57 @@
+<!-- @import head -->
+<div class="container py-6">
+
+	<div id="questions" class="row">
+		<div class="col-4">
+			<input
+				v-model="message"
+				class="form-control" type="text" placeholder="Что ищем?">
+		</div>
+		<div v-if="message" class="col">
+			<input
+				v-model="subject"
+				class="form-control" type="text" placeholder="В какой сфере?">
+		</div>
+		<div v-if="message, subject" class="col">
+			<input
+				v-model="onsite"
+				class="form-control" type="text" placeholder="Поиск на сайте...">
+		</div>
+		<div class="col-12 py-3">
+			<h2 class="display-4 my-3">Google:</h2>
+
+			<div class="py-1"><a class="py-2" :href="'https://www.google.com/search?q=' + message + subject" target="_blank">{{ message }} {{ subject }}</a></div>
+
+		</div>
+
+	</div>
+
+  	<hr>
+
+  	<div id="test">
+	  <div>
+	    <!--
+	      Now we provide each todo-item with the todo object
+	      it's representing, so that its content can be dynamic.
+	      We also need to provide each component with a "key",
+	      which will be explained later.
+	    -->
+		<todo-item
+			v-for="item in groceryList"
+			v-bind:todo="item"
+			v-bind:key="item.id"
+		></todo-item>
+	  </div>
+	</div>
+
+	<hr>
+
+	<div id="app">
+		{{ message }}
+	</div>
+
+</div>
+
+
+
+<!-- @import footer -->

@@ -1,0 +1,39 @@
+{{ define "main" }}
+<main class="posts-single">
+  {{ partial "header-page.html" . }}
+  <div class="content container py-4 py-lg-6 bg-lighter">
+    <div class="row">
+      <aside class="col">
+        {{ if gt .WordCount 50 }}
+        <div class="sticky-top nav-pagenav navbar-expand-md">
+          <button
+            class="site-header-toggler navbar-toggler collapsed ms-n2 mb-3"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#tocContainer"
+            aria-expanded="false"
+            aria-label="Show TOC">
+            <span class="d-flex align-items-center">
+              <span class="hamburger">
+                <i></i>
+                <i></i>
+                <i></i>
+              </span>
+              <span class="font-xsm text-uppercase text-gray mb-2 ms-3">Table of content</span>
+            </span>
+          </button>
+          <div id="tocContainer" class="collapse navbar-collapse pb-4 sticky-top py-3">
+            {{ .TableOfContents }}
+          </div>
+        </div>
+        {{ end }}
+      </aside>
+      {{- with .Content }}
+      <article class="col-xxl-7 overflow-hidden fs-5">
+        {{ . }}
+      </article>
+      {{ end -}}
+    </div>
+  </div>
+</main>
+{{ end }}

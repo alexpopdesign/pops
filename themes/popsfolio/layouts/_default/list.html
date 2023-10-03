@@ -1,0 +1,15 @@
+{{ define "main" }}
+<main class="default-list">
+  {{- partial "header-page.html" . -}}
+  <div class="page-content container-xxl pb-4 pb-lg-5">
+  {{- .Scratch.Set "items" .Paginator.Pages.ByWeight -}}
+  {{ partial "row-images.html" . }}
+  </div>
+  {{ partial "block-page-links.html" . }}
+  {{- with .Content }}
+  <div class="content container">
+    {{ . }}
+  </div>
+  {{ end -}}
+</main>
+{{ end }}

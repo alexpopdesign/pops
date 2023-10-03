@@ -1,0 +1,83 @@
+<div class="block-pricetable container-xxl">
+  <div class="row gx-xxl-7">
+    {{- range $i, $e := . }}
+    <div class="col-lg-4 d-flex pb-5">
+
+      <div class="card">
+        <div class="card-body">
+          <div class="price-name display-3 fw-bolder py-2 px-3 mb-3 mb-lg-4 border text-dark {{ with .borderColor }}border-{{.}}{{else}}border-dark{{end}}">
+            {{.title}}
+          </div>
+          <div class="price-time display-5 mb-2">
+            {{.days}}
+          </div>
+          <div class="price-description mb-3 fs-5 lh-sm">
+            {{.description}}
+          </div>
+          {{ with .includes }}
+          <div class="markerlist-icon bg-chevron" data-aos="fade-up">
+            <div class="display-5 mb-2">
+              Includes
+            </div>
+            <ul>
+              {{ range . }}
+              <li class="nav-item border-bottom"
+                {{ with .popover }}
+                data-bs-toggle="tooltip"
+                data-bs-placement="left"
+                data-bs-title="{{.}}"
+                data-bs-delay='{"show":600,"hide":0}'
+                {{ end }}
+                >{{ if .popover }}<span class="link">{{.title}}</span>{{ else }}{{.title}}{{ end }}</li>
+              {{ end }}
+            </ul>
+          </div>
+          {{ end }}
+        </div>
+        
+        <div class="card-footer text-center text-md-start" data-aos="fade-up">
+          <div class="display-2 mt-2 mb-3 text-dark">
+            <span class="text-primary">$</span>{{.price}}
+          </div>
+          {{ if .form }}
+          <button type="button" class="btn btn-lg btn-{{ with .borderColor }}{{.}}{{else}}dark{{end}} w-100 w-sm-auto" data-bs-toggle="modal" data-bs-target="#exampleModal-{{$i}}">
+            {{ with .linkCaption }}{{.}}{{else}}Get a quote{{end}}
+          </button>
+          {{ else if .formLink }}
+            <a type="button" target="_blank" class="btn btn-lg btn-{{ with .borderColor }}{{.}}{{else}}dark{{end}} w-100 w-sm-auto" href="{{ .formLink | absURL }}">
+              {{ with .linkCaption }}{{.}}{{else}}Get a quote{{end}}
+            </a>
+          {{ end }}
+          {{/*  <span class="divider d-block mt-5 border-bottom {{ with .borderColor }}border-{{.}}{{else}}border-dark{{end}}"></span>  */}}
+        </div>
+
+      </div>
+
+      <!-- Modal -->
+      {{ if .form }}
+      <div class="modal fade" id="exampleModal-{{$i}}" tabindex="-1" aria-labelledby="exampleModal-{{$i}}Label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+            <div class="modal-header inverse {{ with .borderColor }}bg-{{.}}{{else}}bg-dark{{end}}">
+              <div class="modal-title display-4" id="exampleModal-{{$i}}Label">{{.title}}</div>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="mx-auto max-w-lg-70">
+                <div class="hubspot-outerbox">
+                  {{ .form | safeHTML }}
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-link" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+      
+    </div>
+    {{ end }}
+  </div>
+</div>

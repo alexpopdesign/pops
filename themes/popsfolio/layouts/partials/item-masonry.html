@@ -1,0 +1,18 @@
+{{- if $itemImg := (index (.Resources.ByType "image") 0) }}
+{{- $itemImg := $itemImg.Resize "350x q80" -}}
+{{- $itemImg := $itemImg.Filter (images.UnsharpMask 1.2 1 0) -}}
+<div class="item-masonry col-6 col-md-2">
+  <div class="card">
+    <a class="d-block text-center position-relative overflow-hidden" href="{{ .RelPermalink }}">
+      <img class="lazyload img-fluid"
+        src="{{ $itemImg.RelPermalink }}"
+        width="{{ $itemImg.Width }}"
+        height="{{ $itemImg.Height }}"
+        alt="{{ .Title }} {{ $itemImg }}">
+      <div class="list-item-caption caption-in-hover p-1 p-md-2 font-sm font-xs-xsm fade-bg-primary inverse trans">
+        <span class="link">{{ .Title }}</span>
+      </div>
+    </a>
+  </div>
+</div>
+{{ end -}}

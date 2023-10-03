@@ -1,0 +1,10 @@
+{{ define "main" }}
+<main class="default-single">
+  {{ partial "header-page.html" . }}
+  {{ partial "block-page-portfolio.html" . }}
+  
+  {{- .Scratch.Set "items" .Parent.Pages -}}
+  {{- .Scratch.Set "limit" "12" -}}
+  {{ partial "block-listing-thumbs.html" . }}
+</main>
+{{ end }}

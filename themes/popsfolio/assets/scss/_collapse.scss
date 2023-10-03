@@ -1,0 +1,62 @@
+/**
+ *  Collapse component
+ *  ========================================
+*/
+a {
+  &.collapsed {
+    .label-hide {
+      display: none;
+    }
+  }
+  &:not(.collapsed) {
+    .label-show {
+      display: none;
+    }
+  }
+}
+
+$pcW: 16px;
+.plus-close {
+  position: absolute;
+  display: inline-block;
+  left: 0;
+  width: $pcW;
+  height: $pcW;
+  
+  > i {
+    background-color: $link-color;
+    display: block;
+    transition: .25s ease-in;
+    transform-origin: center;
+
+    &:nth-child(1) {
+      width: $pcW;
+      height: 2px;
+      transform: translate(0, 9px) scale(1, 1);
+    }
+    &:nth-child(2) {
+      width: 2px;
+      height: $pcW;
+      transform: translate(7px,0) scale(1, 0);
+    }
+  }
+  .collapsed & > i {
+    &:nth-child(2) {
+      transform: translate(7px,0) scale(1, 1);
+    }
+  }
+  a:hover & {
+    > i {
+      &:nth-child(1) {
+        width: $pcW;
+        height: 2px;
+        transform: translate(0, 9px) scale(0, 1);
+      }
+      &:nth-child(2) {
+        width: 2px;
+        height: $pcW;
+        transform: translate(7px,0) scale(1,1);
+      }
+    }
+  }
+}

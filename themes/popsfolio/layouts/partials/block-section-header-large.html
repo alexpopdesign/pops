@@ -1,0 +1,31 @@
+{{/*
+  .caption
+  .title
+  .titleColor
+  .description
+  .btnLink .btnCaption
+*/}}
+<div class="block-section-header-large container-fluid py-4 pb-lg-7 pt-lg-8 {{ .blockClass }}">
+{{- if or .title .caption -}}
+  {{- with .caption }}
+  <div class="caption fs-5 fw-bolder mb-4 mb-lg-6">{{ . }}</div>
+  {{ end -}}
+  <h2 class="display-1 mb-3 mb-lg-5">
+    {{- with .titleColor }}<span>{{ . }} </span>{{ end -}}{{- .title -}}
+  </h2>
+  {{ end -}}
+  {{ with .description }}
+  <div class="row">
+    <div class="col-lg-9">
+      <div class="lead">
+        {{ . | markdownify }}
+      </div>
+    </div>
+    {{ end }}
+    {{ if and .btnLink .btnCaption }}
+    <div class="col-lg mt-1 d-flex align-items-end justify-content-end">
+      {{ partial "button.html" . }}
+    </div>
+    {{ end }}
+  </div>
+</div>{{ printf "<!-- END block-section-header -->" | safeHTML }}

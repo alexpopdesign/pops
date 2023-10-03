@@ -1,0 +1,1518 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Bootstrap theme-bs</title>
+	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<link rel="stylesheet" type="text/css" href="../../../static/css/bootstrap.css" media="all">
+	<link rel="stylesheet" type="text/css" href="../../../static/css/theme.css" media="all">
+
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&amp;subset=cyrillic" rel="stylesheet">	
+
+	<style type="text/css">
+		.demo-block {
+			display: inline-block;
+			margin: 5px;
+			height: 100px;
+			width: 100px;
+			font-size: 9px;
+		}
+		.demobox {
+			/*outline: 1px dashed rgba(14,55,200,.08);*/
+			overflow: hidden;
+			margin: 0;
+			background-color: rgba(14,55,200,.06);
+		}
+		.demoouter {
+			outline: 1px dashed rgba(14,55,200, .3);
+			overflow: hidden;
+		}
+	
+		#animations .btn {
+			white-space: normal;
+		}
+		button.atrig {
+			text-transform: none;
+		}
+		*[class^='anim-target'] {
+			cursor: pointer;
+			position: relative;
+			padding: 10px;
+			margin: 10px 0;
+			max-width: 700px;
+			min-height: 30px;
+			background-color: #aaa;
+			color: #fff;
+		}
+		.flipbox {
+			position: relative;
+		}
+		.flipbox-qube {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+		}
+		.flipbox-qube.face {
+			-webkit-transform-origin: bottom right;
+			transform-origin: bottom right;
+			-webkit-transform: scaleX(1);
+			transform: scaleX(1);
+		}
+		.flipbox-qube.face.anim-in {
+			-webkit-transform: scaleX(0);
+			transform: scaleX(0);
+		}
+		.flipbox-qube.back {
+			-webkit-transform-origin: top left;
+			transform-origin: top left;
+			-webkit-transform: scaleX(0);
+			transform: scaleX(0);
+		}
+		.flipbox-qube.back.anim-in {
+			-webkit-transform: scaleX(1);
+			transform: scaleX(1);
+		}
+		.scrollspy-example {
+			position: relative;
+			height: 200px;
+			margin-top: 10px;
+			overflow: auto;
+		}
+		.animationBox {
+			overflow: hidden;
+		}
+		.flipbox {
+			margin: 10px 0;
+			width: 200px;
+			height: 200px;
+		}
+		.flipbox-qube {
+			text-align: center;
+			color: #fff;
+			cursor: pointer;
+			padding: 20px;
+		}
+		.flipbox-qube.face {
+			background-color: #333;
+		}
+		.flipbox-qube.back {
+			background-color: #f60;
+		}
+	</style>
+
+<body class="home" data-spy="scroll" data-target="#toc">
+
+<h2>Containers</h2>
+
+<div class="mb-3 container-max border bg-white">
+	<h4>.container-max</h4>
+	<p><strong>.container-max</strong> is the theme extension to use as a limiting container for nested containers. Is not suitable for immediate rows. If you still want to place a ROW, you would add “overflow-hidden” class to the container to hide the row margins.</p>
+
+	<div class="mb-3 container border">
+		<h4>.container</h4>
+		<div class="row">
+			<div class="col-sm"><div class="demobox">Wondered sociable he carriage in speedily margaret. Up devonshire of he thoroughly insensible alteration.</div></div>
+			<div class="col-sm"><div class="demobox">Dashwood marianne in of entrance be on wondered possible building. Wondered sociable he carriage in speedily margaret. Up devonshire of he thoroughly insensible alteration.</div></div>
+			<div class="col-sm"><div class="demobox">Now led tedious shy lasting females off. Dashwood marianne in of entrance be on wondered possible building. Wondered sociable he carriage in speedily margaret. Up devonshire of he thoroughly insensible alteration.</div></div>
+			<div class="col-sm"><div class="demobox">Wondered sociable he carriage in speedily margaret. Up devonshire of he thoroughly insensible alteration.</div></div>
+		</div>
+	</div>
+	<div class="mb-3 container-fluid border">
+		<h4>.container-fluid</h4>
+		<div class="row">
+			<div class="col-sm"><div class="demobox">Wondered sociable he carriage in speedily margaret. Up devonshire of he thoroughly insensible alteration.</div></div>
+			<div class="col-sm"><div class="demobox">Dashwood marianne in of entrance be on wondered possible building. Wondered sociable he carriage in speedily margaret. Up devonshire of he thoroughly insensible alteration.</div></div>
+			<div class="col-sm"><div class="demobox">Now led tedious shy lasting females off. Dashwood marianne in of entrance be on wondered possible building. Wondered sociable he carriage in speedily margaret. Up devonshire of he thoroughly insensible alteration.</div></div>
+			<div class="col-sm"><div class="demobox">Wondered sociable he carriage in speedily margaret. Up devonshire of he thoroughly insensible alteration.</div></div>
+		</div>
+	</div>
+</div>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-3">
+			<nav  id="toc" class="sticky-top" data-toggle="toc"></nav>
+		</div>
+		<div class="col">
+			<hr>
+			
+			<h2>Grid</h2>
+			
+			<a href="https://getbootstrap.com/docs/4.0/layout/grid/" target="_blank">https://getbootstrap.com/docs/4.0/layout/grid/</a>
+			
+			<div class="row">
+				<div class="col-sm"><div class="demobox">Wondered sociable he carriage in speedily margaret. Up devonshire of he thoroughly insensible alteration.</div></div>
+				<div class="col-sm"><div class="demobox">Dashwood marianne in of entrance be on wondered possible building. Wondered sociable he carriage in speedily margaret. Up devonshire of he thoroughly insensible alteration.</div></div>
+				<div class="col-sm"><div class="demobox">Now led tedious shy lasting females off. Dashwood marianne in of entrance be on wondered possible building. Wondered sociable he carriage in speedily margaret. Up devonshire of he thoroughly insensible alteration.</div></div>
+				<div class="col-sm"><div class="demobox">Wondered sociable he carriage in speedily margaret. Up devonshire of he thoroughly insensible alteration.</div></div>
+			</div>
+			
+			<div class="row">
+				<div class="col-sm"><div class="demobox">Wondered sociable he carriage in speedily margaret. Up devonshire of he thoroughly insensible alteration.</div></div>
+				<div class="col-sm"><div class="demobox">Dashwood marianne in of entrance be on wondered possible building. Wondered sociable he carriage in speedily margaret. Up devonshire of he thoroughly insensible alteration.</div></div>
+				<div class="col-sm"><div class="demobox">Now led tedious shy lasting females off. Dashwood marianne in of entrance be on wondered possible building. Wondered sociable he carriage in speedily margaret. Up devonshire of he thoroughly insensible alteration.</div></div>
+			</div>
+			<hr>
+						
+						<h2>Theme Gutters</h2>
+						
+						<div class="row">
+							<div class="col-3 mb-1"><div class="demobox">row</div></div>
+							<div class="col-3 mb-1"><div class="demobox">row</div></div>
+							<div class="col-3 mb-1"><div class="demobox">row</div></div>
+							<div class="col-3 mb-1"><div class="demobox">row</div></div>
+						</div>
+						
+						<div class="row no-gutters">
+							<div class="col-3 mb-1"><div class="demobox">row no-gutters</div></div>
+							<div class="col-3 mb-1"><div class="demobox">row no-gutters</div></div>
+							<div class="col-3 mb-1"><div class="demobox">row no-gutters</div></div>
+							<div class="col-3 mb-1"><div class="demobox">row no-gutters</div></div>
+						</div>
+						
+						<div class="row gx-0">
+							<div class="col-3 mb-1"><div class="demobox">row gx-0</div></div>
+							<div class="col-3 mb-1"><div class="demobox">row gx-0</div></div>
+							<div class="col-3 mb-1"><div class="demobox">row gx-0</div></div>
+							<div class="col-3 mb-1"><div class="demobox">row gx-0</div></div>
+						</div>
+						
+						<div class="row gx-1">
+							<div class="col-3 mb-1"><div class="demobox">row gx-1</div></div>
+							<div class="col-3 mb-1"><div class="demobox">row gx-1</div></div>
+							<div class="col-3 mb-1"><div class="demobox">row gx-1</div></div>
+							<div class="col-3 mb-1"><div class="demobox">row gx-1</div></div>
+						</div>
+						
+						<div class="row gx-2">
+							<div class="col-3 mb-1"><div class="demobox">row gx-2</div></div>
+							<div class="col-3 mb-1"><div class="demobox">row gx-2</div></div>
+							<div class="col-3 mb-1"><div class="demobox">row gx-2</div></div>
+							<div class="col-3 mb-1"><div class="demobox">row gx-2</div></div>
+						</div>
+						
+						<div class="row gx-3">
+							<div class="col-3 mb-1"><div class="demobox">row gx-3</div></div>
+							<div class="col-3 mb-1"><div class="demobox">row gx-3</div></div>
+							<div class="col-3 mb-1"><div class="demobox">row gx-3</div></div>
+							<div class="col-3 mb-1"><div class="demobox">row gx-3</div></div>
+						</div>
+						
+						<div class="row gx-2 gx-md-4">
+							<div class="col-3 mb-1"><div class="demobox">row gx-2 gx-md-4</div></div>
+							<div class="col-3 mb-1"><div class="demobox">row gx-2 gx-md-4</div></div>
+							<div class="col-3 mb-1"><div class="demobox">row gx-2 gx-md-4</div></div>
+							<div class="col-3 mb-1"><div class="demobox">row gx-2 gx-md-4</div></div>
+						</div>
+						
+						<div class="row gx-1 gx-md-5">
+							<div class="col-3 mb-1"><div class="demobox">row gx-1 gx-md-5</div></div>
+							<div class="col-3 mb-1"><div class="demobox">row gx-1 gx-md-5</div></div>
+							<div class="col-3 mb-1"><div class="demobox">row gx-1 gx-md-5</div></div>
+							<div class="col-3 mb-1"><div class="demobox">row gx-1 gx-md-5</div></div>
+						</div>
+			<hr>
+									
+									<h2>Spacing</h2>
+									
+									<h3>Margins</h3>
+									
+									<div class="row">
+										<div class="col-12">
+											<div class="demoouter"><div class="demobox m-1">m-1</div></div>
+											<div class="demoouter"><div class="demobox m-2">m-2</div></div>
+											<div class="demoouter"><div class="demobox m-3">m-3</div></div>
+											<div class="demoouter"><div class="demobox m-4">m-4</div></div>
+											<div class="demoouter"><div class="demobox m-5">m-5</div></div>
+											<div class="demoouter"><div class="demobox m-6">m-6</div></div>
+										</div>
+										<div class="col-sm-4">
+											<h4>Margin Left</h4>
+											<div class="demoouter"><div class="demobox ml-1">ml-1</div></div>
+											<div class="demoouter"><div class="demobox ml-2">ml-2</div></div>
+											<div class="demoouter"><div class="demobox ml-3">ml-3</div></div>
+											<div class="demoouter"><div class="demobox ml-4">ml-4</div></div>
+											<div class="demoouter"><div class="demobox ml-5">ml-5</div></div>
+											<div class="demoouter"><div class="demobox ml-6">ml-6</div></div>
+										</div>
+										<div class="col-sm-4">
+											<h4>Margin Right</h4>
+											<div class="demoouter"><div class="demobox mr-1">mr-1</div></div>
+											<div class="demoouter"><div class="demobox mr-2">mr-2</div></div>
+											<div class="demoouter"><div class="demobox mr-3">mr-3</div></div>
+											<div class="demoouter"><div class="demobox mr-4">mr-4</div></div>
+											<div class="demoouter"><div class="demobox mr-5">mr-5</div></div>
+											<div class="demoouter"><div class="demobox mr-6">mr-6</div></div>
+										</div>
+										<div class="col-sm-4">
+											<h4>Margin Horizontal</h4>
+											<div class="demoouter"><div class="demobox mx-1">mx-1</div></div>
+											<div class="demoouter"><div class="demobox mx-2">mx-2</div></div>
+											<div class="demoouter"><div class="demobox mx-3">mx-3</div></div>
+											<div class="demoouter"><div class="demobox mx-4">mx-4</div></div>
+											<div class="demoouter"><div class="demobox mx-5">mx-5</div></div>
+											<div class="demoouter"><div class="demobox mx-6">mx-6</div></div>
+										</div>
+									</div>
+									
+									<hr>
+									
+									<h3>Paddings</h3>
+									
+									<div class="row">
+										<div class="col-12">
+											<div class="demobox mb-1 p-1"><div class="demoouter">p-1</div></div>
+											<div class="demobox mb-1 p-2"><div class="demoouter">p-2</div></div>
+											<div class="demobox mb-1 p-3"><div class="demoouter">p-3</div></div>
+											<div class="demobox mb-1 p-4"><div class="demoouter">p-4</div></div>
+											<div class="demobox mb-1 p-5"><div class="demoouter">p-5</div></div>
+											<div class="demobox mb-1 p-6"><div class="demoouter">p-6</div></div>
+										</div>
+										<div class="col-sm-4">
+											<h4>Padding Left</h4>
+											<div class="demobox mb-1 pl-1"><div class="demoouter">pl-1</div></div>
+											<div class="demobox mb-1 pl-2"><div class="demoouter">pl-2</div></div>
+											<div class="demobox mb-1 pl-3"><div class="demoouter">pl-3</div></div>
+											<div class="demobox mb-1 pl-4"><div class="demoouter">pl-4</div></div>
+											<div class="demobox mb-1 pl-5"><div class="demoouter">pl-5</div></div>
+											<div class="demobox mb-1 pl-6"><div class="demoouter">pl-6</div></div>
+										</div>
+										<div class="col-sm-4">
+											<h4>Padding Right</h4>
+											<div class="demobox mb-1 pr-1"><div class="demoouter">pr-1</div></div>
+											<div class="demobox mb-1 pr-2"><div class="demoouter">pr-2</div></div>
+											<div class="demobox mb-1 pr-3"><div class="demoouter">pr-3</div></div>
+											<div class="demobox mb-1 pr-4"><div class="demoouter">pr-4</div></div>
+											<div class="demobox mb-1 pr-5"><div class="demoouter">pr-5</div></div>
+											<div class="demobox mb-1 pr-6"><div class="demoouter">pr-6</div></div>
+										</div>
+										<div class="col-sm-4">
+											<h4>Padding Horizontal</h4>
+											<div class="demobox mb-1 px-1"><div class="demoouter">px-1</div></div>
+											<div class="demobox mb-1 px-2"><div class="demoouter">px-2</div></div>
+											<div class="demobox mb-1 px-3"><div class="demoouter">px-3</div></div>
+											<div class="demobox mb-1 px-4"><div class="demoouter">px-4</div></div>
+											<div class="demobox mb-1 px-5"><div class="demoouter">px-5</div></div>
+											<div class="demobox mb-1 px-6"><div class="demoouter">px-6</div></div>
+										</div>
+									</div>
+			<hr>
+												
+												<h2>Sizing Theme</h2>
+												
+												<div class="mb-3">
+													<span class="maxw-xl demobox mb-1 d-inline-block"><strong>maxw-xl</strong> Now led tedious shy lasting females off. Dashwood marianne in of entrance be on wondered possible building. Wondered sociable he carriage in speedily margaret. Up devonshire of he thoroughly insensible alteration.</span><br>
+													<span class="maxw-lg demobox mb-1 d-inline-block"><strong>maxw-lg</strong> Now led tedious shy lasting females off. Dashwood marianne in of entrance be on wondered possible building. Wondered sociable he carriage in speedily margaret. Up devonshire of he thoroughly insensible alteration.</span><br>
+													<span class="maxw-md demobox mb-1 d-inline-block"><strong>maxw-md</strong> Now led tedious shy lasting females off. Dashwood marianne in of entrance be on wondered possible building. Wondered sociable he carriage in speedily margaret. Up devonshire of he thoroughly insensible alteration.</span><br>
+													<span class="maxw-sm demobox mb-1 d-inline-block"><strong>maxw-sm</strong> Now led tedious shy lasting females off. Dashwood marianne in of entrance be on wondered possible building. Wondered sociable he carriage in speedily margaret. Up devonshire of he thoroughly insensible alteration.</span><br>
+												</div>
+			<hr>
+															
+															<h2>Sizing Bootstrap + Theme</h2>
+															
+															<a href="https://getbootstrap.com/docs/4.3/utilities/sizing/">https://getbootstrap.com/docs/4.3/utilities/sizing/</a>
+															
+															<div style="height: 100px; background-color: rgba(255,0,0,0.1);">
+																<span class="h-10 d-inline-block" style="background-color: rgba(0,0,255,.1)">h-10 (%)</span>
+																<span class="h-20 d-inline-block" style="background-color: rgba(0,0,255,.1)">h-20 (%)</span>
+																<span class="h-25 d-inline-block" style="background-color: rgba(0,0,255,.1)">h-25 (%)</span>
+																<span class="h-30 d-inline-block" style="background-color: rgba(0,0,255,.1)">h-30 (%)</span>
+																<span class="h-40 d-inline-block" style="background-color: rgba(0,0,255,.1)">h-40 (%)</span>
+																<span class="h-50 d-inline-block" style="background-color: rgba(0,0,255,.1)">h-50 (%)</span>
+																<span class="h-60 d-inline-block" style="background-color: rgba(0,0,255,.1)">h-60 (%)</span>
+																<span class="h-70 d-inline-block" style="background-color: rgba(0,0,255,.1)">h-70 (%)</span>
+																<span class="h-75 d-inline-block" style="background-color: rgba(0,0,255,.1)">h-75 (%)</span>
+																<span class="h-80 d-inline-block" style="background-color: rgba(0,0,255,.1)">h-80 (%)</span>
+																<span class="h-90 d-inline-block" style="background-color: rgba(0,0,255,.1)">h-90 (%)</span>
+																<span class="h-100 d-inline-block" style="background-color: rgba(0,0,255,.1)">h-100 (%)</span>
+															</div>
+															<div style="background-color: rgba(255,0,0,0.1);">
+																<span class="w-10 d-block mb-1" style="background-color: rgba(0,0,255,.1)">w-10 (%)</span>
+																<span class="w-20 d-block mb-1" style="background-color: rgba(0,0,255,.1)">w-20 (%)</span>
+																<span class="w-25 d-block mb-1" style="background-color: rgba(0,0,255,.1)">w-25 (%)</span>
+																<span class="w-30 d-block mb-1" style="background-color: rgba(0,0,255,.1)">w-30 (%)</span>
+																<span class="w-40 d-block mb-1" style="background-color: rgba(0,0,255,.1)">w-40 (%)</span>
+																<span class="w-50 d-block mb-1" style="background-color: rgba(0,0,255,.1)">w-50 (%)</span>
+																<span class="w-60 d-block mb-1" style="background-color: rgba(0,0,255,.1)">w-60 (%)</span>
+																<span class="w-70 d-block mb-1" style="background-color: rgba(0,0,255,.1)">w-70 (%)</span>
+																<span class="w-75 d-block mb-1" style="background-color: rgba(0,0,255,.1)">w-75 (%)</span>
+																<span class="w-80 d-block mb-1" style="background-color: rgba(0,0,255,.1)">w-80 (%)</span>
+																<span class="w-90 d-block mb-1" style="background-color: rgba(0,0,255,.1)">w-90 (%)</span>
+																<span class="w-100 d-block mb-1" style="background-color: rgba(0,0,255,.1)">w-100 (%)</span>
+															</div>
+															<div style="background-color: rgba(255,0,0,0.1);">
+																<span class="min-vh-10 d-inline-block" style="background-color: rgba(0,0,255,.1)">min-vh-10</span>
+																<span class="min-vh-20 d-inline-block" style="background-color: rgba(0,0,255,.1)">min-vh-20</span>
+																<span class="min-vh-25 d-inline-block" style="background-color: rgba(0,0,255,.1)">min-vh-25</span>
+																<span class="min-vh-30 d-inline-block" style="background-color: rgba(0,0,255,.1)">min-vh-30</span>
+																<span class="min-vh-40 d-inline-block" style="background-color: rgba(0,0,255,.1)">min-vh-40</span>
+																<span class="min-vh-50 d-inline-block" style="background-color: rgba(0,0,255,.1)">min-vh-50</span>
+																<span class="min-vh-60 d-inline-block" style="background-color: rgba(0,0,255,.1)">min-vh-60</span>
+																<span class="min-vh-70 d-inline-block" style="background-color: rgba(0,0,255,.1)">min-vh-70</span>
+																<span class="min-vh-75 d-inline-block" style="background-color: rgba(0,0,255,.1)">min-vh-75</span>
+																<span class="min-vh-80 d-inline-block" style="background-color: rgba(0,0,255,.1)">min-vh-80</span>
+																<span class="min-vh-90 d-inline-block" style="background-color: rgba(0,0,255,.1)">min-vh-90</span>
+																<span class="min-vh-100 d-inline-block" style="background-color: rgba(0,0,255,.1)">min-vh-100</span>
+															</div>
+			<hr>
+																		
+																		<h2>Theme Borders</h2>
+																		
+																		<h3>Widths all</h3>
+																		
+																		<div class="clearfix bg-white">
+																			<span class="p-4 m-3 d-inline-block border">.border</span>
+																			<span class="p-4 m-3 d-inline-block border border-lg">.border border-lg</span>
+																			<span class="p-4 m-3 d-inline-block border border-xl">.border border-xl</span>
+																		</div>
+																		
+																		<h3>Rounds all</h3>
+																		
+																		<div class="clearfix bg-white">
+																			<span class="p-4 m-3 d-inline-block bg-gray rounded-sm">.rounded-sm</span>
+																			<span class="p-4 m-3 d-inline-block bg-gray rounded">.rounded</span>
+																			<span class="p-4 m-3 d-inline-block bg-gray rounded-lg">.rounded-lg</span>
+																			<span class="p-4 m-3 d-inline-block bg-gray rounded-xlg">.rounded-xlg</span>
+																		</div>
+			<h2 class="display-2">Theme Font</h2>
+																					
+																					<div class="row font-sm text-center">
+																						
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-wifi"></div>
+																							<div class="mls"> themeicon-wifi (e9cb)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-snapchat-ghost"></div>
+																							<div class="mls"> themeicon-snapchat-ghost (e9cc)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-sketch"></div>
+																							<div class="mls"> themeicon-sketch (e9cd)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-odnoklassniki"></div>
+																							<div class="mls"> themeicon-odnoklassniki (e9ce)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-medium-m"></div>
+																							<div class="mls"> themeicon-medium-m (e9cf)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-adobe"></div>
+																							<div class="mls"> themeicon-adobe (e9d0)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-amazon"></div>
+																							<div class="mls"> themeicon-amazon (e9d1)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-amazon-pay"></div>
+																							<div class="mls"> themeicon-amazon-pay (e9d2)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-app-store"></div>
+																							<div class="mls"> themeicon-app-store (e9d3)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-creative-commons"></div>
+																							<div class="mls"> themeicon-creative-commons (e9d4)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-facebook-messenger"></div>
+																							<div class="mls"> themeicon-facebook-messenger (e9d5)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-git"></div>
+																							<div class="mls"> themeicon-git (e9d6)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-trello"></div>
+																							<div class="mls"> themeicon-trello (e9d7)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-dribbble"></div>
+																							<div class="mls"> themeicon-dribbble (e9d8)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-facebook-f"></div>
+																							<div class="mls"> themeicon-facebook-f (e9d9)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-android"></div>
+																							<div class="mls"> themeicon-android (e9da)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-apple"></div>
+																							<div class="mls"> themeicon-apple (e9db)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-blogger-b"></div>
+																							<div class="mls"> themeicon-blogger-b (e9dc)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-cc-amazon-pay"></div>
+																							<div class="mls"> themeicon-cc-amazon-pay (e9dd)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-cc-apple-pay"></div>
+																							<div class="mls"> themeicon-cc-apple-pay (e9de)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-cc-paypal"></div>
+																							<div class="mls"> themeicon-cc-paypal (e9df)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-cc-mastercard"></div>
+																							<div class="mls"> themeicon-cc-mastercard (e9e0)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-cc-jcb"></div>
+																							<div class="mls"> themeicon-cc-jcb (e9e1)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-cc-discover"></div>
+																							<div class="mls"> themeicon-cc-discover (e9e2)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-cc-visa"></div>
+																							<div class="mls"> themeicon-cc-visa (e9e3)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-cc-amex"></div>
+																							<div class="mls"> themeicon-cc-amex (e9e4)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-cc-diners-club"></div>
+																							<div class="mls"> themeicon-cc-diners-club (e9e5)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-cc-stripe"></div>
+																							<div class="mls"> themeicon-cc-stripe (e9e6)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-dropbox"></div>
+																							<div class="mls"> themeicon-dropbox (e9e7)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-flickr"></div>
+																							<div class="mls"> themeicon-flickr (e9e8)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-flipboard"></div>
+																							<div class="mls"> themeicon-flipboard (e9e9)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-github"></div>
+																							<div class="mls"> themeicon-github (e9ea)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-google-drive"></div>
+																							<div class="mls"> themeicon-google-drive (e9eb)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-google"></div>
+																							<div class="mls"> themeicon-google (e9ec)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-instagram"></div>
+																							<div class="mls"> themeicon-instagram (e9ed)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-invision"></div>
+																							<div class="mls"> themeicon-invision (e9ee)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-linkedin-in"></div>
+																							<div class="mls"> themeicon-linkedin-in (e9ef)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-mailchimp"></div>
+																							<div class="mls"> themeicon-mailchimp (e9f0)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-paypal"></div>
+																							<div class="mls"> themeicon-paypal (e9f1)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-pinterest"></div>
+																							<div class="mls"> themeicon-pinterest (e9f2)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-quora"></div>
+																							<div class="mls"> themeicon-quora (e9f3)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-behance"></div>
+																							<div class="mls"> themeicon-behance (e9f4)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-reddit-alien"></div>
+																							<div class="mls"> themeicon-reddit-alien (e9f5)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-salesforce"></div>
+																							<div class="mls"> themeicon-salesforce (e9f6)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-skype"></div>
+																							<div class="mls"> themeicon-skype (e9f7)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-slack"></div>
+																							<div class="mls"> themeicon-slack (e9f8)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-telegram-plane"></div>
+																							<div class="mls"> themeicon-telegram-plane (e9f9)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-tumblr"></div>
+																							<div class="mls"> themeicon-tumblr (e9fa)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-twitter"></div>
+																							<div class="mls"> themeicon-twitter (e9fb)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-vk"></div>
+																							<div class="mls"> themeicon-vk (e9fc)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-viber"></div>
+																							<div class="mls"> themeicon-viber (e9fd)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-whatsapp"></div>
+																							<div class="mls"> themeicon-whatsapp (e9fe)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-wikipedia-w"></div>
+																							<div class="mls"> themeicon-wikipedia-w (e9ff)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-wordpress-simple"></div>
+																							<div class="mls"> themeicon-wordpress-simple (ea00)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-youtube"></div>
+																							<div class="mls"> themeicon-youtube (ea01)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-yandex-international"></div>
+																							<div class="mls"> themeicon-yandex-international (ea02)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-schedule"></div>
+																							<div class="mls"> themeicon-schedule (e8b5)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-account_balance"></div>
+																							<div class="mls"> themeicon-account_balance (e84f)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-account_balance_wallet"></div>
+																							<div class="mls"> themeicon-account_balance_wallet (e850)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-account_box"></div>
+																							<div class="mls"> themeicon-account_box (e851)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-add_shopping_cart"></div>
+																							<div class="mls"> themeicon-add_shopping_cart (e854)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-flight"></div>
+																							<div class="mls"> themeicon-flight (e539)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-airplay"></div>
+																							<div class="mls"> themeicon-airplay (e055)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-airport_shuttle"></div>
+																							<div class="mls"> themeicon-airport_shuttle (eb3c)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-announcement"></div>
+																							<div class="mls"> themeicon-announcement (e85a)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-apps"></div>
+																							<div class="mls"> themeicon-apps (e5c3)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-arrow_back"></div>
+																							<div class="mls"> themeicon-arrow_back (e5c4)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-arrow_downward"></div>
+																							<div class="mls"> themeicon-arrow_downward (e5db)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-arrow_drop_down"></div>
+																							<div class="mls"> themeicon-arrow_drop_down (e5c5)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-arrow_drop_up"></div>
+																							<div class="mls"> themeicon-arrow_drop_up (e5c7)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-arrow_forward"></div>
+																							<div class="mls"> themeicon-arrow_forward (e5c8)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-arrow_upward"></div>
+																							<div class="mls"> themeicon-arrow_upward (e5d8)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-art_track"></div>
+																							<div class="mls"> themeicon-art_track (e060)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-aspect_ratio"></div>
+																							<div class="mls"> themeicon-aspect_ratio (e85b)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-poll"></div>
+																							<div class="mls"> themeicon-poll (e801)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-flag"></div>
+																							<div class="mls"> themeicon-flag (e153)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-attach_file"></div>
+																							<div class="mls"> themeicon-attach_file (e226)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-attachment"></div>
+																							<div class="mls"> themeicon-attachment (e2bc)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-autorenew"></div>
+																							<div class="mls"> themeicon-autorenew (e863)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-av_timer"></div>
+																							<div class="mls"> themeicon-av_timer (e01b)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-cloud_upload"></div>
+																							<div class="mls"> themeicon-cloud_upload (e2c3)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-beach_access"></div>
+																							<div class="mls"> themeicon-beach_access (eb3e)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-turned_in"></div>
+																							<div class="mls"> themeicon-turned_in (e8e6)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-turned_in_not"></div>
+																							<div class="mls"> themeicon-turned_in_not (e8e7)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-border_color"></div>
+																							<div class="mls"> themeicon-border_color (e22b)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-brightness_low"></div>
+																							<div class="mls"> themeicon-brightness_low (e1ad)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-brightness_high"></div>
+																							<div class="mls"> themeicon-brightness_high (e1ac)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-bug_report"></div>
+																							<div class="mls"> themeicon-bug_report (e868)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-build"></div>
+																							<div class="mls"> themeicon-build (e869)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-business_center"></div>
+																							<div class="mls"> themeicon-business_center (eb3f)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-cake"></div>
+																							<div class="mls"> themeicon-cake (e7e9)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-phone"></div>
+																							<div class="mls"> themeicon-phone (e0cd)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-call_end"></div>
+																							<div class="mls"> themeicon-call_end (e0b1)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-call_made"></div>
+																							<div class="mls"> themeicon-call_made (e0b2)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-call_received"></div>
+																							<div class="mls"> themeicon-call_received (e0b5)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-call_to_action"></div>
+																							<div class="mls"> themeicon-call_to_action (e06c)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-camera"></div>
+																							<div class="mls"> themeicon-camera (e3af)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-photo_camera"></div>
+																							<div class="mls"> themeicon-photo_camera (e412)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-redeem"></div>
+																							<div class="mls"> themeicon-redeem (e8b1)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-card_membership"></div>
+																							<div class="mls"> themeicon-card_membership (e8f7)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-card_travel"></div>
+																							<div class="mls"> themeicon-card_travel (e8f8)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-cast"></div>
+																							<div class="mls"> themeicon-cast (e307)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-cast_connected"></div>
+																							<div class="mls"> themeicon-cast_connected (e308)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-chat"></div>
+																							<div class="mls"> themeicon-chat (e0b7)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-chat_bubble"></div>
+																							<div class="mls"> themeicon-chat_bubble (e0ca)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-chat_bubble_outline"></div>
+																							<div class="mls"> themeicon-chat_bubble_outline (e0cb)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-check"></div>
+																							<div class="mls"> themeicon-check (e5ca)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-check_box"></div>
+																							<div class="mls"> themeicon-check_box (e834)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-check_box_outline_blank"></div>
+																							<div class="mls"> themeicon-check_box_outline_blank (e835)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-check_circle"></div>
+																							<div class="mls"> themeicon-check_circle (e86c)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-chrome_reader_mode"></div>
+																							<div class="mls"> themeicon-chrome_reader_mode (e86d)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-wb_cloudy"></div>
+																							<div class="mls"> themeicon-wb_cloudy (e42d)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-cloud_done"></div>
+																							<div class="mls"> themeicon-cloud_done (e2bf)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-cloud_download"></div>
+																							<div class="mls"> themeicon-cloud_download (e2c0)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-comment"></div>
+																							<div class="mls"> themeicon-comment (e0b9)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-laptop"></div>
+																							<div class="mls"> themeicon-laptop (e31e)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-contact_mail"></div>
+																							<div class="mls"> themeicon-contact_mail (e0d0)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-contact_phone"></div>
+																							<div class="mls"> themeicon-contact_phone (e0cf)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-content_copy"></div>
+																							<div class="mls"> themeicon-content_copy (e14d)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-content_cut"></div>
+																							<div class="mls"> themeicon-content_cut (e14e)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-content_paste"></div>
+																							<div class="mls"> themeicon-content_paste (e14f)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-mode_edit"></div>
+																							<div class="mls"> themeicon-mode_edit (e254)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-payment"></div>
+																							<div class="mls"> themeicon-payment (e8a1)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-crop_original"></div>
+																							<div class="mls"> themeicon-crop_original (e3c4)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-delete"></div>
+																							<div class="mls"> themeicon-delete (e872)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-delete_forever"></div>
+																							<div class="mls"> themeicon-delete_forever (e92b)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-description"></div>
+																							<div class="mls"> themeicon-description (e873)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-desktop_windows"></div>
+																							<div class="mls"> themeicon-desktop_windows (e30c)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-developer_board"></div>
+																							<div class="mls"> themeicon-developer_board (e30d)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-phonelink"></div>
+																							<div class="mls"> themeicon-phonelink (e326)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-devices_other"></div>
+																							<div class="mls"> themeicon-devices_other (e337)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-dialpad"></div>
+																							<div class="mls"> themeicon-dialpad (e0bc)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-directions_bike"></div>
+																							<div class="mls"> themeicon-directions_bike (e52f)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-directions_car"></div>
+																							<div class="mls"> themeicon-directions_car (e531)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-do_not_disturb_alt"></div>
+																							<div class="mls"> themeicon-do_not_disturb_alt (e611)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-done"></div>
+																							<div class="mls"> themeicon-done (e876)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-drafts"></div>
+																							<div class="mls"> themeicon-drafts (e151)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-dvr"></div>
+																							<div class="mls"> themeicon-dvr (e1b2)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-markunread"></div>
+																							<div class="mls"> themeicon-markunread (e159)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-equalizer"></div>
+																							<div class="mls"> themeicon-equalizer (e01d)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-error"></div>
+																							<div class="mls"> themeicon-error (e000)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-explore"></div>
+																							<div class="mls"> themeicon-explore (e87a)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-face"></div>
+																							<div class="mls"> themeicon-face (e87c)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-favorite"></div>
+																							<div class="mls"> themeicon-favorite (e87d)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-favorite_border"></div>
+																							<div class="mls"> themeicon-favorite_border (e87e)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-featured_play_list"></div>
+																							<div class="mls"> themeicon-featured_play_list (e06d)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-featured_video"></div>
+																							<div class="mls"> themeicon-featured_video (e06e)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-fiber_new"></div>
+																							<div class="mls"> themeicon-fiber_new (e05e)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-get_app"></div>
+																							<div class="mls"> themeicon-get_app (e884)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-file_upload"></div>
+																							<div class="mls"> themeicon-file_upload (e2c6)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-filter_vintage"></div>
+																							<div class="mls"> themeicon-filter_vintage (e3e3)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-find_in_page"></div>
+																							<div class="mls"> themeicon-find_in_page (e880)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-flash_on"></div>
+																							<div class="mls"> themeicon-flash_on (e3e7)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-folder"></div>
+																							<div class="mls"> themeicon-folder (e2c7)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-folder_open"></div>
+																							<div class="mls"> themeicon-folder_open (e2c8)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-folder_shared"></div>
+																							<div class="mls"> themeicon-folder_shared (e2c9)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-format_align_justify"></div>
+																							<div class="mls"> themeicon-format_align_justify (e235)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-format_align_left"></div>
+																							<div class="mls"> themeicon-format_align_left (e236)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-format_color_text"></div>
+																							<div class="mls"> themeicon-format_color_text (e23c)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-format_list_bulleted"></div>
+																							<div class="mls"> themeicon-format_list_bulleted (e241)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-format_shapes"></div>
+																							<div class="mls"> themeicon-format_shapes (e25e)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-free_breakfast"></div>
+																							<div class="mls"> themeicon-free_breakfast (eb44)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-fullscreen"></div>
+																							<div class="mls"> themeicon-fullscreen (e5d0)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-fullscreen_exit"></div>
+																							<div class="mls"> themeicon-fullscreen_exit (e5d1)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-gavel"></div>
+																							<div class="mls"> themeicon-gavel (e90e)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-my_location"></div>
+																							<div class="mls"> themeicon-my_location (e55c)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-star"></div>
+																							<div class="mls"> themeicon-star (e838)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-grid_on"></div>
+																							<div class="mls"> themeicon-grid_on (e3ec)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-people"></div>
+																							<div class="mls"> themeicon-people (e7fb)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-group_add"></div>
+																							<div class="mls"> themeicon-group_add (e7f0)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-headset"></div>
+																							<div class="mls"> themeicon-headset (e310)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-headset_mic"></div>
+																							<div class="mls"> themeicon-headset_mic (e311)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-hearing"></div>
+																							<div class="mls"> themeicon-hearing (e023)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-help"></div>
+																							<div class="mls"> themeicon-help (e887)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-home"></div>
+																							<div class="mls"> themeicon-home (e88a)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-photo"></div>
+																							<div class="mls"> themeicon-photo (e410)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-import_contacts"></div>
+																							<div class="mls"> themeicon-import_contacts (e0e0)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-info"></div>
+																							<div class="mls"> themeicon-info (e88e)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-input"></div>
+																							<div class="mls"> themeicon-input (e890)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-insert_drive_file"></div>
+																							<div class="mls"> themeicon-insert_drive_file (e24d)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-tag_faces"></div>
+																							<div class="mls"> themeicon-tag_faces (e420)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-link"></div>
+																							<div class="mls"> themeicon-link (e157)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-keyboard_arrow_down"></div>
+																							<div class="mls"> themeicon-keyboard_arrow_down (e313)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-keyboard_arrow_left"></div>
+																							<div class="mls"> themeicon-keyboard_arrow_left (e314)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-keyboard_arrow_right"></div>
+																							<div class="mls"> themeicon-keyboard_arrow_right (e315)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-keyboard_arrow_up"></div>
+																							<div class="mls"> themeicon-keyboard_arrow_up (e316)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-keyboard_hide"></div>
+																							<div class="mls"> themeicon-keyboard_hide (e31a)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-keyboard_voice"></div>
+																							<div class="mls"> themeicon-keyboard_voice (e31d)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-language"></div>
+																							<div class="mls"> themeicon-language (e894)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-laptop_mac"></div>
+																							<div class="mls"> themeicon-laptop_mac (e320)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-layers"></div>
+																							<div class="mls"> themeicon-layers (e53b)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-lightbulb_outline"></div>
+																							<div class="mls"> themeicon-lightbulb_outline (e90f)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-local_bar"></div>
+																							<div class="mls"> themeicon-local_bar (e540)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-local_florist"></div>
+																							<div class="mls"> themeicon-local_florist (e545)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-shopping_cart"></div>
+																							<div class="mls"> themeicon-shopping_cart (e8cc)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-theaters"></div>
+																							<div class="mls"> themeicon-theaters (e8da)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-local_offer"></div>
+																							<div class="mls"> themeicon-local_offer (e54e)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-print"></div>
+																							<div class="mls"> themeicon-print (e8ad)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-room"></div>
+																							<div class="mls"> themeicon-room (e8b4)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-lock_open"></div>
+																							<div class="mls"> themeicon-lock_open (e898)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-lock_outline"></div>
+																							<div class="mls"> themeicon-lock_outline (e899)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-mail_outline"></div>
+																							<div class="mls"> themeicon-mail_outline (e0e1)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-map"></div>
+																							<div class="mls"> themeicon-map (e55b)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-markunread_mailbox"></div>
+																							<div class="mls"> themeicon-markunread_mailbox (e89b)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-menu"></div>
+																							<div class="mls"> themeicon-menu (e5d2)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-monetization_on"></div>
+																							<div class="mls"> themeicon-monetization_on (e263)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-more_horiz"></div>
+																							<div class="mls"> themeicon-more_horiz (e5d3)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-more_vert"></div>
+																							<div class="mls"> themeicon-more_vert (e5d4)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-nature"></div>
+																							<div class="mls"> themeicon-nature (e406)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-navigation"></div>
+																							<div class="mls"> themeicon-navigation (e55d)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-near_me"></div>
+																							<div class="mls"> themeicon-near_me (e569)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-new_releases"></div>
+																							<div class="mls"> themeicon-new_releases (e031)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-next_week"></div>
+																							<div class="mls"> themeicon-next_week (e16a)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-notifications"></div>
+																							<div class="mls"> themeicon-notifications (e7f4)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-notifications_active"></div>
+																							<div class="mls"> themeicon-notifications_active (e7f7)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-ondemand_video"></div>
+																							<div class="mls"> themeicon-ondemand_video (e63a)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-open_in_browser"></div>
+																							<div class="mls"> themeicon-open_in_browser (e89d)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-open_with"></div>
+																							<div class="mls"> themeicon-open_with (e89f)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-pages"></div>
+																							<div class="mls"> themeicon-pages (e7f9)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-pause_circle_filled"></div>
+																							<div class="mls"> themeicon-pause_circle_filled (e035)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-person"></div>
+																							<div class="mls"> themeicon-person (e7fd)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-person_add"></div>
+																							<div class="mls"> themeicon-person_add (e7fe)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-phone_android"></div>
+																							<div class="mls"> themeicon-phone_android (e324)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-pin_drop"></div>
+																							<div class="mls"> themeicon-pin_drop (e55e)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-play_circle_filled"></div>
+																							<div class="mls"> themeicon-play_circle_filled (e038)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-play_circle_outline"></div>
+																							<div class="mls"> themeicon-play_circle_outline (e039)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-power"></div>
+																							<div class="mls"> themeicon-power (e63c)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-power_settings_new"></div>
+																							<div class="mls"> themeicon-power_settings_new (e8ac)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-public"></div>
+																							<div class="mls"> themeicon-public (e80b)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-visibility"></div>
+																							<div class="mls"> themeicon-visibility (e8f4)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-remove_shopping_cart"></div>
+																							<div class="mls"> themeicon-remove_shopping_cart (e928)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-warning"></div>
+																							<div class="mls"> themeicon-warning (e002)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-save"></div>
+																							<div class="mls"> themeicon-save (e161)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-school"></div>
+																							<div class="mls"> themeicon-school (e80c)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-sd_storage"></div>
+																							<div class="mls"> themeicon-sd_storage (e1c2)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-search"></div>
+																							<div class="mls"> themeicon-search (e8b6)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-security"></div>
+																							<div class="mls"> themeicon-security (e32a)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-send"></div>
+																							<div class="mls"> themeicon-send (e163)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-settings"></div>
+																							<div class="mls"> themeicon-settings (e8b8)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-settings_overscan"></div>
+																							<div class="mls"> themeicon-settings_overscan (e8c4)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-share"></div>
+																							<div class="mls"> themeicon-share (e80d)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-show_chart"></div>
+																							<div class="mls"> themeicon-show_chart (e6e1)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-textsms"></div>
+																							<div class="mls"> themeicon-textsms (e0d8)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-snooze"></div>
+																							<div class="mls"> themeicon-snooze (e046)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-spa"></div>
+																							<div class="mls"> themeicon-spa (eb4c)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-spellcheck"></div>
+																							<div class="mls"> themeicon-spellcheck (e8ce)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-star_border"></div>
+																							<div class="mls"> themeicon-star_border (e83a)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-storage"></div>
+																							<div class="mls"> themeicon-storage (e1db)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-straighten"></div>
+																							<div class="mls"> themeicon-straighten (e41c)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-style"></div>
+																							<div class="mls"> themeicon-style (e41d)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-thumb_down"></div>
+																							<div class="mls"> themeicon-thumb_down (e8db)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-thumb_up"></div>
+																							<div class="mls"> themeicon-thumb_up (e8dc)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-thumbs_up_down"></div>
+																							<div class="mls"> themeicon-thumbs_up_down (e8dd)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-timelapse"></div>
+																							<div class="mls"> themeicon-timelapse (e422)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-timeline"></div>
+																							<div class="mls"> themeicon-timeline (e922)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-timer"></div>
+																							<div class="mls"> themeicon-timer (e425)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-trending_up"></div>
+																							<div class="mls"> themeicon-trending_up (e8e5)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-tune"></div>
+																							<div class="mls"> themeicon-tune (e429)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-tv"></div>
+																							<div class="mls"> themeicon-tv (e333)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-verified_user"></div>
+																							<div class="mls"> themeicon-verified_user (e8e8)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-vertical_align_bottom"></div>
+																							<div class="mls"> themeicon-vertical_align_bottom (e258)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-vertical_align_top"></div>
+																							<div class="mls"> themeicon-vertical_align_top (e25a)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-videocam"></div>
+																							<div class="mls"> themeicon-videocam (e04b)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-videocam_off"></div>
+																							<div class="mls"> themeicon-videocam_off (e04c)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-view_list"></div>
+																							<div class="mls"> themeicon-view_list (e8ef)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-view_module"></div>
+																							<div class="mls"> themeicon-view_module (e8f0)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-view_quilt"></div>
+																							<div class="mls"> themeicon-view_quilt (e8f1)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-view_stream"></div>
+																							<div class="mls"> themeicon-view_stream (e8f2)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-visibility_off"></div>
+																							<div class="mls"> themeicon-visibility_off (e8f5)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-voice_chat"></div>
+																							<div class="mls"> themeicon-voice_chat (e62e)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-volume_up"></div>
+																							<div class="mls"> themeicon-volume_up (e050)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-vpn_key"></div>
+																							<div class="mls"> themeicon-vpn_key (e0da)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-watch"></div>
+																							<div class="mls"> themeicon-watch (e334)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-watch_later"></div>
+																							<div class="mls"> themeicon-watch_later (e924)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-wb_incandescent"></div>
+																							<div class="mls"> themeicon-wb_incandescent (e42e)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-wc"></div>
+																							<div class="mls"> themeicon-wc (e63d)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-wifi1"></div>
+																							<div class="mls"> themeicon-wifi1 (e63e)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-work"></div>
+																							<div class="mls"> themeicon-work (e8f9)</div>
+																						</div>
+																						<div class="col-6 col-md-4 col-lg-3">
+																							<div class="themeicon themeicon-zoom_out_map"></div>
+																							<div class="mls"> themeicon-zoom_out_map (e56b)</div>
+																						</div>
+																					
+																					</div>
+		</div>
+	</div>
+</div>
+
+
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="../_vue.js"></script>
+
+	<script src="../../../static/js/bootstrap-min.js"></script>
+	<script src="../../../static/js/theme-min.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+{{ define "main" }}
+
+{{- with .Params.cover }}
+{{ partial "block-cover.html" . }}
+{{ end -}}
+
+{{ with .Params.person }}
+{{ partial "block-person.html" . }}
+{{ end -}}
+
+{{- with .Params.headerWebdesign }}
+{{ partial "block-section-header-large.html" . }}
+{{ end -}}
+{{- with .Params.portfolioWebdesign }}
+{{ partial "block-portfolio.html" . }}
+{{ end -}}
+
+<div id="fonts"></div>
+{{- with .Params.headerFonts }}
+{{ partial "block-section-header-large.html" . }}
+{{ end -}}
+{{- with .Params.portfolioFonts }}
+{{ partial "block-portfolio-min.html" . }}
+{{ end -}}
+
+<div id="fonts"></div>
+{{- with .Params.headerBranding }}
+{{ partial "block-section-header-large.html" . }}
+{{ end -}}
+{{- with .Params.portfolioBranding }}
+{{ partial "block-portfolio-min.html" . }}
+{{ end -}}
+
+{{/*
+ 
+{{- $titleColor := .Scratch.Set "titleColor" "Illustrator " -}}
+{{- $title := .Scratch.Set "title" "Styles" -}}
+{{- $description := .Scratch.Set "description" "If you are working with Adobe Illustrator, you should definitely know what a graphic style is. This is a must-have feature! Styles can be applied to any flat shape, but these styles are designed specifically for primary use with fonts." -}}
+{{ partial "block-section-header.html" . }}
+
+{{- .Scratch.Set "typeSource" "styles" -}}
+{{- .Scratch.Set "limit" 8 -}}
+{{ partial "block-listing-images.html" . }}
+
+{{- .Scratch.Set "link" "/styles/" -}}
+{{- .Scratch.Set "link_label" "More styles" -}}
+{{ partial "block-actionbtn.html" . }}
+
+{{- $titleColor := .Scratch.Set "titleColor" "" -}}
+{{- $title := .Scratch.Set "title" "Typefaces" -}}
+{{- $description := .Scratch.Set "description" "These are not ordinary fonts, but vector and bitmap objects (typefaces) specially designed for lettering in common design software: Adobe Illustrator, Photoshop, Canva and more. The advantage of vector symbols is that you get unique and detailed images, which are convenient to use in both sketches and in final works." -}}
+{{ partial "block-section-header.html" . }}
+
+{{- .Scratch.Set "typeSource" "typefaces" -}}
+{{- .Scratch.Set "limit" 8 -}}
+{{ partial "block-listing-images.html" . }}
+
+{{- .Scratch.Set "link" "/typefaces/" -}}
+{{- .Scratch.Set "link_label" "More typefaces" -}}
+{{ partial "block-actionbtn.html" . }}  
+
+*/}}
+
+{{- with .Content }}
+<div class="content container pb-4 pb-md-6">
+  {{ . }}
+</div>
+{{ end -}}
+
+{{ end -}}

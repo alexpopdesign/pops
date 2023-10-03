@@ -1,0 +1,93 @@
+{{- $siteParams := .Site.Params -}}
+{{- $teSiteParams := .Page.Params -}}
+{{- $teSiteLogo := $siteParams.logo_te.img -}}
+{{- $teSiteLogoHeight := $siteParams.logo_te.height -}}
+{{- $teSiteLogoWidth := $siteParams.logo_te.width -}}
+{{- $teSiteTitle := $teSiteParams.logoname -}}
+{{- $teSiteHideTitle := $teSiteParams.displaySiteTitle -}}
+{{- $socialsEnabled := $siteParams.socialsEnabled -}}
+<header class="header-site-typoinlife container-max bg-primary inverse py-3 ">
+  <div class="container-fluid px-lg-5">
+    <div class="header-site-content navbar-expand-md d-md-flex flex-wrap justify-content-between ">
+      <div class="header-site-logogroup d-flex align-items-center justify-content-between">
+        {{- if not (eq .Kind "section") }}
+        <a href="{{ absURL .Site.BaseURL }}/typoinlife">
+        {{ end -}}
+          <div class="d-flex align-items-center flex-fill pb-2 pt-md-2">
+            {{- if $teSiteLogo }}
+            <div class="logo-main">
+              <img class="logo-img img-fluid me-3 me-md-4"
+                src="{{ relURL $teSiteLogo }}"
+                alt="{{ $teSiteTitle }}"
+                style="max-height:{{ $teSiteLogoHeight }}px; max-width:{{ $teSiteLogoWidth }}px;">
+            </div>
+            {{ end -}}
+            <div class="logo-names{{- if not $teSiteHideTitle }} removed{{ end -}}">
+              <div class="logo-sitename display-5 pt-1 text-nowrap font-weight-bold font-xs-base">{{ $teSiteTitle }}</div>
+            </div>
+          </div>
+        {{- if not (eq .Kind "section") }}
+        </a>
+        {{ end -}}
+        <button
+          class="header-site-toggler navbar-toggler collapsed me-n2"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target=".header-site-nav"
+          aria-expanded="false"
+          aria-label="Show in menu">
+          <span class="hamburger">
+            <i></i>
+            <i></i>
+            <i></i>
+          </span>
+        </button>
+      </div>{{- printf "<!-- END header-site-logogroup -->" | safeHTML }}
+      <div class="header-site-data d-flex align-items-center justify-content-center justify-content-lg-end">
+        <div class="header-site-nav collapse navbar-collapse">
+          {{ printf "<!-- Socials for mobile devises -->" | safeHTML }}
+          {{- if $socialsEnabled }}
+          <div class="header-site-socials m-2 d-flex d-md-none text-center">
+            {{ partial "socials.html" . }}
+          </div>        
+          {{ end -}}
+          <nav class="nav nav-main justify-content-center font-sm text-uppercase">
+          {{- $currentPage := . -}}
+           {{ range .Site.Menus.main }}
+            {{- if .HasChildren }}
+            <div class="has-children">
+              <a class="nav-link link py-2 {{ if $currentPage.HasMenuCurrent "main" . }}font-weight-bold{{ end }}"
+              href="{{ .URL }}">{{ .Pre }}{{ .Name }}{{ .Post }}</a>
+              <div class="nav-dropdown text-center text-sm-left mt-md-n2 nav-main py-3">
+                {{ range .Children }}
+                  {{- if $currentPage.IsMenuCurrent "main" . }}
+                  <span class="nav-link py-1 level-2">
+                    {{ .Pre }}{{ .Name }}{{ .Post }}
+                  </span>
+                  {{ else -}}
+                  <a class="nav-link link py-1 level-2 {{ if $currentPage.IsMenuCurrent "main" . }}font-weight-bold{{ end }}" href="{{ .URL }}">
+                    {{ .Pre }}{{ .Name }}{{ .Post }}
+                  </a>
+                  {{ end -}}
+                {{ end -}}
+              </div>
+            </div>
+            {{ else }}
+            <a class="nav-link link level-1 {{ if $currentPage.HasMenuCurrent "main" . }}active{{ end }}"
+            href="{{ .URL }}">{{ .Pre }}{{ .Name }}{{ .Post }}</a>
+            {{- end -}}
+            {{ end }}
+          </nav>
+        </div>{{- printf "<!-- END header-site-nav -->" | safeHTML }}
+        <div class="header-site-content d-flex flex-column flex-md-row flex-nowrap align-items-center">
+          {{ printf "<!-- Socials for NONE mobile devises -->" | safeHTML }}
+          {{- if $socialsEnabled }}
+          <div class="socials ms-2 my-2 d-none d-md-flex">
+              {{ partial "socials.html" . }}
+          </div>
+          {{ end -}}
+        </div>
+      </div>{{- printf "<!-- END header-site-data -->" | safeHTML }}
+    </div>{{- printf "<!-- END header-site-content -->" | safeHTML }}
+  </div>
+</header>{{- printf "<!-- END header-site-te -->" | safeHTML }}

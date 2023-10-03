@@ -1,0 +1,11 @@
+#scrollBtn {
+  display: none;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: $zindex-max;
+
+  .scrolledBtn & {
+    display: inline-flex;
+  }
+}

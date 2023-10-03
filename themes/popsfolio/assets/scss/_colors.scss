@@ -1,0 +1,112 @@
+// @each $color, $value in $theme-colors {
+//   .bg-#{$color} {
+//     // color: color-contrast($value);
+//   }
+// }
+
+@each $color, $value in $theme-transparent-bg {
+  .fade-bg-#{$color} {
+    background-color: #{$value};
+    color: color-contrast($value);
+  }
+}
+
+// Text gradient
+
+// @each $color, $value in $theme-grad-colors {
+//   .#{$color} {
+//     background: #{$value};
+//     -webkit-background-clip: text;
+//     -webkit-text-fill-color: transparent;
+//   }
+// }
+
+// Background gradient
+
+// @each $color, $value in $theme-grad-colors {
+//   .bg-#{$color} {
+//     background: #{$value};
+//   }
+// }
+
+
+
+// Inverse
+.inverse {
+
+  &,
+  .text-gray,
+  .icon-base
+  {
+    color: rgba(256, 256, 256 , .8) !important;
+  }
+
+  & .lead,
+  a,
+  a:hover,
+  a:focus,
+  .phone-main,
+  .text-primary,
+  .text-secondary,
+  .text-success,
+  .text-warning,
+  .text-danger,
+  .text-info,
+  .text-black,
+  .text-dark,
+  .text-gray-dark,
+  // .text-gray
+  .icon-base,
+  .nav-link,
+  .btn,
+  h1, h2, h3, h4, h5, h6, 
+  ul li:before,
+  ol li:before,
+  .display-1, .display-2, .display-3, .display-4, .display-5, .display-6
+  {
+    color: $white !important;
+  }
+
+  .dropdown-menu {
+    @include media-breakpoint-up(lg) {
+      background-color: var(--bs-dark) !important; 
+    }//END @media
+  }
+
+  .hamburger > i {
+    background-color: var(--bs-gray);
+  }
+
+  // Borders
+
+  blockquote,
+  .border,
+  .border-top,
+  .border-bottom,
+  .border-start,
+  .border-end
+  {
+    border-color: rgba(256, 256, 256 , .3) !important;
+  }
+
+  .btn-link:after,
+  .underline:after {
+    background-color: rgba(256, 256, 256 , .3) !important;
+  }
+
+  .btn-outline-primary,
+  .btn-outline-secondary
+  {
+    background-color: transparent;
+  }
+
+  .btn:not(.btn-link) {
+    border-color: rgba(256, 256, 256 , 1) !important;
+    &:hover {
+      color: $white !important;
+      background-color: $primary;
+      box-shadow: 0 8px 0 0 rgba($dark,0.4);
+      // border-color: rgba(256, 256, 256 , .5) !important;
+    }
+  }
+} // End inverse

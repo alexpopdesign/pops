@@ -1,0 +1,20 @@
+.container-max {
+  max-width: $container-max-w;
+  margin: auto;
+}
+
+.row-inline {
+  columns: 1 auto;
+  
+  @include media-breakpoint-up(lg) {
+    columns: 2 auto;
+  }
+  @include media-breakpoint-up(xl) {
+    columns: 3 auto;
+  }
+}
+
+.col-inline {
+  display: inline-block;
+  width: 95%;
+}

@@ -1,0 +1,14 @@
+{{ define "main" }}
+<main class="te-list container-max bg-white">
+  {{- partial "header-page.html" . -}}
+
+  {{- .Scratch.Set "items" .Paginator.Pages.ByWeight -}}
+  {{ partial "row-imagecards.html" . }}
+
+  {{- with .Content }}
+  <div class="content container">
+    {{ . }}
+  </div>
+  {{ end -}}
+</main>
+{{ end }}

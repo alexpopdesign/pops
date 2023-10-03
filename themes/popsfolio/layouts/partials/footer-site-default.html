@@ -1,0 +1,35 @@
+<div class="footer-site-default container-max pt-4 pb-4 bg-lighter">
+  <div class="container">
+    <div class="row">
+
+      <div class="footer-nav col-md pb-4">
+        <nav class="nav nav-footer w-100 align-items-center justify-content-center">
+          {{- $currentPage := . -}}
+            {{ range or .Site.Menus.main }}
+            <a class="nav-link link fs-6 text-uppercase level-1 {{ if $currentPage.HasMenuCurrent "main" . }}active{{ end }}"
+            href="{{ .URL }}">{{ .Pre }}{{ .Name }}{{ .Post }}</a>
+            {{ end }}
+            {{ range .Site.Menus.footer }}
+            <a class="nav-link link fs-6 text-uppercase level-1 {{ if $currentPage.HasMenuCurrent "footer" . }}active{{ end }}"
+            href="{{ .URL }}">{{ .Pre }}{{ .Name }}{{ .Post }}</a>
+            {{ end }}
+          </nav>
+      </div>
+      
+      <div class="footer-contacts col-12 text-center pb-4">
+        <div class="footer-buttons">
+          <a type="button" class="btn btn-link" target="_blank" href="{{ .Site.Params.formContactLink | absURL }}">{{ .Site.Params.text.contactMe }}</a>
+          {{/*  <!-- Button trigger modal -->
+          <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#footerModalContact">
+            {{- .Site.Params.text.contactMe -}}
+          </button>  */}}
+        </div>
+      </div>
+
+    </div>
+    <div class="fs-sm text-center p-3">
+      <span class="text-dark me-3">© 2020 Designed by Popskraft</span>
+      <a class="text-gray" target="_blank" rel="noopener" href="/legal/">{{- .Site.Params.legal -}}</a>     
+    </div>
+  </div>
+</div>{{- printf "<!-- END footer-site-default -->" | safeHTML -}}

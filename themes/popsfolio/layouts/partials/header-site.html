@@ -1,0 +1,85 @@
+{{- $currentPage := . -}}
+{{- $siteParams := .Site.Params -}}
+{{- $siteTitle := .Site.Title -}}
+{{- $siteTitleSecond := .Params.siteTitleSecond -}}
+{{- $siteSubTitle := $siteParams.subtitle -}}
+{{- $siteHideTitle := $siteParams.displaySiteTitle -}}
+{{- $siteLogoHeight := $siteParams.logo.height -}}
+{{- $siteLogo := $siteParams.logo.img -}}
+{{- $socialsEnabled := $siteParams.socialsEnabled -}}
+{{- $siteHeaderClass := .Params.siteHeaderClass -}}
+{{- if eq .Params.siteHeaderInverse true -}}{{- $siteLogo = $siteParams.logo.imgWhite -}}{{end}}
+<header class="header-site {{$siteHeaderClass}}">
+  <div class="container-fluid ">
+    <nav class="navbar navbar-expand-lg py-4 py-lg-5">
+
+      {{ if not $.IsHome }}
+      <a class="navbar-brand d-flex align-items-center" href="{{ absURL .Site.BaseURL }}">
+      {{- else }}
+      <div class="navbar-brand d-flex align-items-center">
+      {{- end }}
+        {{ if $siteLogo -}}
+        <img class="logo-img img-fluid me-3 mr-lg-5"
+          src="{{ $siteLogo | relURL }}"
+          alt="{{ $siteTitle }}"
+          style="height:{{ $siteLogoHeight }}px;">
+        {{- end }}
+        <span class="site-name fs-4">{{ $siteTitle }}</span>{{- if $siteTitleSecond }}<span class="site-name fs-4 fw-bolder">&nbsp;{{ $siteTitleSecond }}</span>{{ end -}}
+      {{- if not $.IsHome }}
+      </a>
+      {{- else }}
+      </div>
+      {{- end }}{{ printf "<!-- END navbar-brand -->" | safeHTML }}
+
+      <button class="navbar-toggler collapsed"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#headerNav"
+        aria-controls="headerNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="hamburger">
+          <i></i>
+          <i></i>
+          <i></i>
+        </span>
+      </button>
+
+      <div id="headerNav" class="collapse navbar-collapse">
+        <span class="navbar-mask fade-bg-dark"></span>
+        <ul class="navbar-nav ms-auto text-uppercase mt-4 mt-lg-0">
+        {{ with .Params.menu }}
+        {{ range . }}
+          <li class="nav-item"><a class="nav-link link" href="{{.link}}">{{.label}}</a></li>
+        {{end}}
+        {{else}}
+        {{ range .Site.Menus.main }}
+        {{- if .HasChildren }}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">{{ .Pre }}{{ .Name }}{{ .Post }}</a>
+              <ul class="dropdown-menu fade-down">
+                {{ range .Children }}
+                {{- if $currentPage.IsMenuCurrent "main" . }}
+                <li><span class="dropdown-item active">{{ .Pre }}{{ .Name }}{{ .Post }}</span></li>
+                {{ else -}}
+                <li><a class="dropdown-item" href="{{ .URL }}">{{ .Pre }}{{ .Name }}{{ .Post }}</a></li>
+                {{ end -}}
+                {{ end -}}
+              </ul>
+          </li>
+        {{- else }}
+          <li class="nav-item  border-bottom border-bottom-lg-0 border-light {{- if $currentPage.HasMenuCurrent "main" . }} active{{ end -}}"><a class="nav-link link" href="{{ .URL }}" {{- with .Params.inmodal }} data-bs-toggle="modal" data-bs-target="#{{ . }}"{{ end }}>{{ .Pre }}{{ .Name }}{{ .Post }}</a></li>
+        {{- end }} 
+        {{- end }}
+        {{- end }}
+        </ul>
+        {{- if $socialsEnabled }}
+        <div class="socials ms-2 my-2 d-none d-md-flex">
+            {{ partial "socials.html" . }}
+        </div>
+        {{ end -}}
+      </div>{{ printf "<!-- END headerNav -->" | safeHTML }}
+
+    </nav>{{ printf "<!-- END navbar -->" | safeHTML }}
+  </div>
+</header>{{- printf "<!-- END header-site -->" | safeHTML }}

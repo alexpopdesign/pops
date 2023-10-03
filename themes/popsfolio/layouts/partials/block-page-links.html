@@ -1,0 +1,23 @@
+{{/*
+  # This block displays the links defined in the page frontmatter.
+  # In the page frontmatter place this code:
+  links:
+    link1:
+      link: https://site.com
+      link_label: Buy Nightlife font
+*/}}
+{{- $linkClass := .Scratch.Get "link_class" -}}
+{{- $links := .Params.links -}}
+{{- if ($links) }}
+<div class="block-page-links text-center py-3 py-lg-4">
+  {{- with $links }}
+  <div class="pt-3">
+    {{- range . }}
+    <a class="{{- with $linkClass }}{{ . }}{{ else }}underline mx-3{{ end }}"
+      href="{{ .link }}"
+      target="_blank" rel="noopener">{{ .link_label }}</a>
+    {{ end -}}
+  </div>
+  {{ end -}}
+</div>{{ printf "<!-- END block-page-links -->" | safeHTML }}
+{{ end -}}

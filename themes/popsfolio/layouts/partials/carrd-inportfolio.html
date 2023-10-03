@@ -1,0 +1,28 @@
+{{ if and .Site.Params.carrd.isOn .Params.carrdTemplateLink }}
+<div class="my-4">
+  <a class="btn btn-lg btn-dark" href="{{ absURL .Site.BaseURL }}{{ .Site.Params.carrd.linkOrder }}">{{ .Site.Params.carrd.linkOrderCaption }}</a>
+</div>
+<div class="mb-5 p-3 border border-1 border-gray">
+  <div class="fw-bold lh-sm">
+    {{ .Site.Params.carrd.text}}
+  </div>
+  <div class="my-2">
+    <a class="btn btn-link" target="_blank" href="{{ .Site.Params.carrd.link }}">{{ .Site.Params.carrd.linkCaption }}<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+        class="ms-2 bi bi-arrow-right" viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+          d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z">
+        </path>
+      </svg>
+    </a>
+    {{ if .Params.carrdTemplateLink }}
+    <a class="btn btn-link" target="_blank" href="{{ .Params.carrdTemplateLink }}">{{ .Site.Params.carrd.carrdTemplateLinkCaption }}<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+        class="ms-2 bi bi-arrow-right" viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+          d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z">
+        </path>
+      </svg>
+    </a>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

@@ -1,0 +1,37 @@
+{{- $items := .Scratch.Get "items" -}}
+{{- $limit := .Scratch.Get "limit" -}}
+{{- with $items | and $limit }}
+<div class="block-listing-thumbs mt-6 mb-4"
+  data-flickity='{
+    "cellAlign": "left",
+    "contain": true,
+    "pageDots": false,
+    "prevNextButtons": false
+  }'>
+  {{- range . | first $limit }}
+    {{- if $itemImg := .Resources.ByType "image" }}
+    {{- $itemImg := (.Resources.GetMatch (print (index $itemImg 0))).Fill "381x242 webp picture Center" -}}
+    {{/* $itemImg := $itemImg.Filter (images.UnsharpMask 0.8 1 0) */}}
+    {{- if ne .Page $.Page  }}
+    <a class="carousel-cell me-2 d-block text-center w-40 w-md-20" href="{{ .RelPermalink }}">
+      <img class="img-full lazyload rounded bg-lighter"
+        src="{{ $itemImg.RelPermalink }}"
+        width="{{ $itemImg.Width }}"
+        height="{{ $itemImg.Height }}"
+        alt="{{ .Title }} {{ $itemImg }}">
+    </a>
+    {{ end -}}
+    {{ end -}}
+  {{ end -}}
+</div>{{ printf "<!-- END block-listing-thumbs -->" | safeHTML }}
+<div class="container-fluid mb-6 d-flex align-items-end justify-content-end">
+  <a class="btn btn-lg btn-link" href="{{ $.Parent.Permalink }}">{{ $.Parent.Title }}<svg
+      xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+      class="ms-2 bi bi-arrow-right text-primary" viewBox="0 0 16 16">
+      <path fill-rule="evenodd"
+        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z">
+      </path>
+    </svg>
+  </a>
+</div>
+{{ end -}}

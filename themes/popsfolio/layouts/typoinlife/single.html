@@ -1,0 +1,79 @@
+{{ define "main" }}
+<main class="typolife-single container-max bg-light">
+  {{ partial "header-page.html" . }}
+  <article class="content container-fluid pb-4 pb-md-6 mt-n2 mt-md-n4">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+
+        <div class="typolife-single-content shadow">
+          {{ partial "item-slider.html" . }}
+          <div class="p-3 px-md-5 py-md-4 bg-white">
+            {{- if $.Params.author }}
+            <h3 class="mb-2">by
+              <a class="font-weight-bold link text-dark"
+                href="{{- with .Params.author_link }}{{ . }}{{ else }}{{ .Params.link }}{{ end -}}"
+                target="_blank"
+                rel="noopener"
+                rel="nofollow">
+                {{ $.Params.author -}}
+              </a>
+            </h3>
+            {{ end -}}
+            {{- with $.Params.link }}
+              <a class="d-inline-block link mb-4"
+                href="{{.}}"
+                target="_blank"
+                rel="noopener"
+                rel="nofollow">
+                <span class="themeicon themeicon-link icon-base text-link"></span>&ensp;{{- with $.Params.link_caption }}{{ . }}{{ else }}Go to the {{ $.Title }} page{{ end -}}
+              </a>
+            {{ end -}}
+            {{- with .Content }}
+            <div class="txt">
+            {{ . }}
+            </div>
+            {{ end -}}
+            {{ partial "item-tags-page.html" . }}
+          </div>
+        </div>
+
+        <div class="row pt-4 pt-md-5">
+          {{- with .PrevInSection}}
+          <div class="col-6">
+            <a class="d-flex align-items-end" href="{{.Permalink}}">
+              {{- if $itemImg := (index (.Resources.ByType "image") 0) }}
+              {{- $itemImg := $itemImg.Fill "150x150 Center q90" -}}
+              {{- $itemImg := $itemImg.Filter (images.UnsharpMask 0.8 1 0) -}}
+              <img class="img-fluid w-30"
+                src="{{ $itemImg.RelPermalink }}"
+                width="{{ $itemImg.Width }}"
+                height="{{ $itemImg.Height }}"
+                alt="{{ .Title }} {{ $itemImg }}">
+              {{ end -}}
+              <span class="font-xs-xsm link text-dark text-uppercase ms-2 ms-md-3">{{.Title}}</span>
+            </a>
+          </div>
+          {{ end -}}
+          {{- with .NextInSection}}
+          <div class="col-6">
+            <a class="d-flex align-items-end justify-content-end text-end" href="{{.Permalink}}">
+              <span class="font-xs-xsm link text-dark text-uppercase me-2 me-md-3">{{.Title}}</span>
+              {{- if $itemImg := (index (.Resources.ByType "image") 0) }}
+              {{- $itemImg := $itemImg.Fill "150x150 Center q90" -}}
+              {{- $itemImg := $itemImg.Filter (images.UnsharpMask 0.8 1 0) -}}
+              <img class="img-fluid w-30"
+                src="{{ $itemImg.RelPermalink }}"
+                width="{{ $itemImg.Width }}"
+                height="{{ $itemImg.Height }}"
+                alt="{{ .Title }} {{ $itemImg }}">
+              {{ end -}}
+            </a>
+          </div>
+          {{ end -}}
+        </div>
+
+      </div>
+    </div>
+  </article>
+</main>
+{{ end }}

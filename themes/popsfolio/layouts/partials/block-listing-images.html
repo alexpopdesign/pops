@@ -1,0 +1,15 @@
+{{- $blockClass := $.Scratch.Get "blockClass" -}}
+{{- $type := or ($.Scratch.Get "type") ("Type") -}}
+{{- $typeSource := $.Scratch.Get "typeSource" -}}
+{{- $limit := $.Scratch.Get "limit" -}}
+<div class="container-xxl overflow-hidden">
+  <div class="block-listing-images {{ with $blockClass }}{{ . }}{{ else }} row row-cols-2 row-cols-lg-3 gx-2 gx-xl-4 justify-content-center pb-4 pb-md-6{{ end }}">
+    {{- with .Site.Pages }}
+    {{- range first $limit ( where . $type $typeSource ) -}}
+      {{- if ne .Params.hideInList true }}
+        {{ partial "item-image.html" . }}
+      {{ end -}}
+    {{ end -}}
+    {{ end -}}
+  </div>
+</div>{{ printf "<!-- END block-listing-images -->" | safeHTML }}

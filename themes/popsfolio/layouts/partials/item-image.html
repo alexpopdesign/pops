@@ -1,0 +1,18 @@
+{{- if $itemImg := or (.Resources.GetMatch "thumb/*") (index (.Resources.ByType "image") 0) }}
+{{- $itemImg := $itemImg.Fill "561x390 webp picture Center" -}}
+<div class="item-image col pb-3 pb-lg-4" data-aos="fade-in">
+  <a class="d-block" href="{{ .RelPermalink }}">
+    <span class="hover-zoom">
+      <img class="img-full bg-lighter rounded"
+        {{ with .Params.background_color_HEX }} style="background-color:{{.}}!important;"{{end}}
+        src="{{ $itemImg.RelPermalink }}"
+        width="{{ $itemImg.Width }}"
+        height="{{ $itemImg.Height }}"
+        alt="{{ .Title }} {{ $itemImg }}">
+    </span>
+    <div class="fs-xs-xsm fs-sm text-truncate py-2 pt-sm-3 text-gray">
+      <span class="link">{{ .Title }}</span>
+    </div>
+  </a>
+</div>
+{{ end -}}
