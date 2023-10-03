@@ -1,0 +1,2 @@
+# Redirect default Netlify subdomain to primary domain
+https://popskraft.netlify.app/* https://popskraft.com/:splat 301!
